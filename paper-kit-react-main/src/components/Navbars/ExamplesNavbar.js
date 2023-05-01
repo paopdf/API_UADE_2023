@@ -71,15 +71,6 @@ function ExamplesNavbar() {
     >
       <Container>
         <div className="navbar-translate">
-          <NavbarBrand
-            data-placement="bottom"
-            to="/index"
-            target="_blank"
-            title="Coded by Creative Tim"
-            tag={Link}
-          >
-            Paper Kit 2
-          </NavbarBrand>
           <button
             aria-expanded={navbarCollapse}
             className={classnames("navbar-toggler navbar-toggler", {
@@ -99,16 +90,29 @@ function ExamplesNavbar() {
         >
           <Nav navbar>
             <NavItem>
-              <NavLink to="/index" tag={Link}>
-                <i className="nc-icon nc-layout-11" /> Components
+              <NavLink to="/profile-page" tag={Link}>
+                <i className="nc-icon nc-layout-11" /> Home
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink
-                href="https://demos.creative-tim.com/paper-kit-react/#/documentation?ref=pkr-examples-navbar"
-                target="_blank"
+                to="/curriculum-page" tag={Link} // agregar en index y armar archivo en views
               >
-                <i className="nc-icon nc-book-bookmark" /> Documentation
+                <i className="nc-icon nc-book-bookmark" /> Curriculum
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink
+                to="/contact-page" tag={Link} // agregar en index y armar archivo en views
+              >
+                <i className="nc-icon nc-book-bookmark" /> Contactar Profesional
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink
+                to="/contact-page" tag={Link} // agregar en index y armar archivo en views
+              >
+                <i className="nc-icon nc-book-bookmark" /> Contactos
               </NavLink>
             </NavItem>
             <NavItem>
@@ -162,9 +166,20 @@ function ExamplesNavbar() {
                 href="https://www.creative-tim.com/product/paper-kit-pro-react?ref=pkr-examples-navbar"
                 target="_blank"
               >
-                <i className="nc-icon nc-spaceship"></i> Upgrade to Pro
+                <i className="nc-icon nc-spaceship"></i> Sign up
               </Button>
             </NavItem>
+            <NavItem>
+              <Button
+                className="btn-round"
+                color="danger"
+                href="https://www.creative-tim.com/product/paper-kit-pro-react?ref=pkr-examples-navbar"
+                target="_blank"
+              >
+                <i className="nc-icon nc-spaceship"></i> Sign in
+              </Button>
+            </NavItem>
+         
           </Nav>
         </Collapse>
       </Container>

@@ -71,7 +71,7 @@ function ProfilePage() {
             </div>
             <div className="name">
               <h4 className="title">
-                Jane Faker <br />
+                Agustin Bravo <br />
               </h4>
               <h6 className="description">Music Producer</h6>
             </div>
@@ -85,13 +85,10 @@ function ProfilePage() {
                 feel with a solid groove structure.
               </p>
               <br />
-              <Button className="btn-round" color="default" outline>
-                <i className="fa fa-cog" /> Settings
-              </Button>
             </Col>
           </Row>
           <br />
-          <div className="nav-tabs-navigation">
+       {/*    <div className="nav-tabs-navigation"> 
             <div className="nav-tabs-wrapper">
               <Nav role="tablist" tabs>
                 <NavItem>
@@ -117,7 +114,7 @@ function ProfilePage() {
               </Nav>
             </div>
           </div>
-          {/* Tab panes */}
+        
           <TabContent className="following" activeTab={activeTab}>
             <TabPane tabId="1" id="follows">
               <Row>
@@ -189,6 +186,7 @@ function ProfilePage() {
               </Button>
             </TabPane>
           </TabContent>
+          */}  
         </Container>
       </div>
       <DemoFooter />

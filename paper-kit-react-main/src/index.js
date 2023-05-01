@@ -54,7 +54,7 @@ root.render(
         path="/register-page"
         render={(props) => <RegisterPage {...props} />}
       />
-      <Redirect to="/index" />
+      <Redirect to="/profile-page" />
     </Switch>
   </BrowserRouter>
 );
