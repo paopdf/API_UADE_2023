@@ -30,6 +30,10 @@ import NucleoIcons from "views/NucleoIcons.js";
 import LandingPage from "views/examples/LandingPage.js";
 import ProfilePage from "views/examples/ProfilePage.js";
 import RegisterPage from "views/examples/RegisterPage.js";
+import ContactPage from "views/examples/ContactPage.js";
+import IngresoPage from "views/examples/IngresoPage.js";
+import ContactosPage from "views/examples/ContactosPage.js";
+//import TablaPage from "views/examples/TablaPage.js";
 // others
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -53,6 +57,18 @@ root.render(
       <Route
         path="/register-page"
         render={(props) => <RegisterPage {...props} />}
+      />
+      <Route
+        path="/contact-page"
+        render={(props) => <ContactPage {...props} />}
+      />
+      <Route
+        path="/ingreso-page"
+        render={(props) => <IngresoPage {...props} />}
+      />
+      <Route
+        path="/contactos-page"
+        render={(props) => <ContactosPage {...props} />}
       />
       <Redirect to="/profile-page" />
     </Switch>

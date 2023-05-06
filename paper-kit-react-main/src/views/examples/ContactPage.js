@@ -17,26 +17,30 @@
 
 */
 import React from "react";
-
-import { Link } from "react-router-dom";
+import TextField from '@mui/material/TextField';
+import Box from '@mui/material/Box';
 // reactstrap components
-import { Button, Container, Row, Col, NavLink } from "reactstrap";
+import {
+  Button,
+  Container,
+  Row,
+  Col
+} from "reactstrap";
+
 
 // core components
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-
 import ProfilePageHeader from "components/Headers/ProfilePageHeader.js";
 import DemoFooter from "components/Footers/DemoFooter.js";
 
+function ProfilePage() {
 
-function RegisterPage() {
+
   document.documentElement.classList.remove("nav-open");
   React.useEffect(() => {
-    document.body.classList.add("contact-page");
+    document.body.classList.add("profile-page");
     return function cleanup() {
-      document.body.classList.remove("contact-page");
+      document.body.classList.remove("profile-page");
     };
   });
   return (
@@ -46,7 +50,7 @@ function RegisterPage() {
         <div className="section profile-content">
           <Container>
             <div className="title">
-              <h3>Mis Datos</h3>
+              <h3>Rellenar Formulario</h3>
             </div>
             <Box
                 component="form"
@@ -63,51 +67,41 @@ function RegisterPage() {
                       <TextField
                         required
                         id="outlined-required"
-                        label="Nombre"
+                        label="Nombre y Apellido"
                         defaultValue=""
                       />
                     </Row>
-                    <Row>
-                      <TextField
-                        required
-                        id="outlined-disabled"
-                        label="Apellido"
-                        defaultValue=""
-                      />
-                    </Row>                        
                     <Row>
                       <TextField
                         required
                         id="outlined-disabled"
                         label="Email"
-                        type="email"
+                        type="mail"
                         defaultValue=""
                       />
                     </Row>
                     <Row>
                       <TextField
-                        required
-                        id="outlined-disabled"
-                        label="Contraseña"
-                        type="password"
+                        fullWidth
+                        id="outlined-multiline-static"
+                        label="Mensaje"
+                        multiline
+                        rows={4}
                         defaultValue=""
-                      />
-                    </Row> 
-                    <NavLink to="/profile-page" tag={Link}>
+                        />
+                    </Row>
                     <Button
                       block
                       className="btn-round"
                       color="primary"
                       type ="submit"
                     >
-                      Registrar
+                      Enviar
                     </Button>
-                    </NavLink> 
-            
                   </div>
                 </Col>
               </Row> 
-            </Box>
+              </Box>
           </Container>
         </div>
       <DemoFooter />
@@ -115,4 +109,4 @@ function RegisterPage() {
   );
 }
 
-export default RegisterPage;
+export default ProfilePage;
