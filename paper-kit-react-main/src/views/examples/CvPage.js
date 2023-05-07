@@ -79,6 +79,16 @@ const styles = {
     marginBottom: "3px",
     textDecoration: "none",
   },
+  
+  cardInfoBlack: {
+    color: "#141414",
+    marginTop: "0px",
+    minHeight: "auto",
+    fontWeight: "100",
+    fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
+    marginBottom: "3px",
+    textDecoration: "none",
+  },
 };
 
 const useStyles = makeStyles(styles);
@@ -115,16 +125,23 @@ function CvPage() {
                 </a>
               </CardAvatar>
               <CardBody profile>
-                <h6 className={classes.cardCategory}>CEO / CO-FOUNDER</h6>
-                <h4 className={classes.cardTitle}>Alec Thompson</h4>
+                <h6 className={classes.cardCategory}>SQL Developer</h6>
+                <h4 className={classes.cardTitle}>Paola Pérez</h4>
                 <p className={classes.description}>
-                  Don{"'"}t be scared of the truth because we need to restart the
-                  human foundation in truth And I love you like Kanye loves Kanye
-                  I love Rick Owens’ bed design but the back is...
+                  Desarrolladora SQL con 6 años de experiencia en el sector de la
+                  tecnologia con conocimientos de COBOL, python y SQL. Actualmente
+                  me encuentro en la busqueda de nuevos desafios que me permitan seguir
+                  creciendo profesionalmente.
                 </p>
-                <Button color="primary" round>
-                  Follow
-                </Button>
+              </CardBody>
+            </Card>
+            <Card profile>
+              <CardBody profile>
+                <h4 className={classes.cardInfoBlack}>Email: pao_pdpf@hotmail.com</h4>
+                <h4 className={classes.cardInfoBlack}>Perfil Linkedin</h4>
+                <h4 className={classes.cardInfoBlack}>Telefono: 1135985869</h4>
+                <h4 className={classes.cardInfoBlack}>Palermo, CABA</h4>
+          
               </CardBody>
             </Card>
           </GridItem>
