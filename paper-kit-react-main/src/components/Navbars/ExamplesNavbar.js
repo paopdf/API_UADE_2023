@@ -24,6 +24,7 @@ import classnames from "classnames";
 // reactstrap components
 import {
   Collapse,
+  NavbarBrand,
   Navbar,
   NavItem,
   NavLink,
@@ -70,6 +71,16 @@ function ExamplesNavbar() {
     >
       <Container>
         <div className="navbar-translate">
+            <NavbarBrand
+            data-placement="bottom"
+            to="/profile-page"
+            target="_blank"
+            title="CV"
+            tag={Link}
+          >
+            
+          </NavbarBrand>
+      
           <button
             aria-expanded={navbarCollapse}
             className={classnames("navbar-toggler navbar-toggler", {
@@ -95,7 +106,7 @@ function ExamplesNavbar() {
             </NavItem>
             <NavItem>
               <NavLink
-                to="/curriculum-page" tag={Link} // agregar en index y armar archivo en views
+                to="/cv-page" tag={Link} // agregar en index y armar archivo en views
               >
                 <i className="nc-icon nc-book-bookmark" /> Curriculum
               </NavLink>
@@ -155,8 +166,8 @@ function ExamplesNavbar() {
               <Button
                 className="btn-round"
                 color="danger"
-                href="/register-page"
-                target="_blank"
+                to="/register-page" tag={Link}
+
               >
                 <i className="nc-icon nc-spaceship"></i> Sign up
               </Button>
@@ -165,13 +176,12 @@ function ExamplesNavbar() {
               <Button
                 className="btn-round"
                 color="danger"
-                href="/ingreso-page"
-                target="_blank"
+                to="/ingreso-page" tag={Link}
+
               >
                 <i className="nc-icon nc-spaceship"></i> Sign in
               </Button>
             </NavItem>
-         
           </Nav>
         </Collapse>
       </Container>

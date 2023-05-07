@@ -33,6 +33,7 @@ import RegisterPage from "views/examples/RegisterPage.js";
 import ContactPage from "views/examples/ContactPage.js";
 import IngresoPage from "views/examples/IngresoPage.js";
 import ContactosPage from "views/examples/ContactosPage.js";
+import CvPage  from "views/examples/CvPage.js";
 //import TablaPage from "views/examples/TablaPage.js";
 // others
 
@@ -66,6 +67,12 @@ root.render(
         path="/ingreso-page"
         render={(props) => <IngresoPage {...props} />}
       />
+      
+      <Route
+        path="/cv-page"
+        render={(props) => <CvPage {...props} />}
+      />
+      
       <Route
         path="/contactos-page"
         render={(props) => <ContactosPage {...props} />}

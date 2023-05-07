@@ -9,18 +9,19 @@ import DemoFooter from "components/Footers/DemoFooter.js";
 
 // reactstrap components
 import {
+  Row,
   Col
 } from "reactstrap";
 const columns = [
-  { field: 'id', headerName: 'ID', width: 70 },
+  { field: 'id', headerName: 'ID', width: 60 },
   { field: 'Nombre', headerName: 'Nombre', width: 130 },
-  { field: 'Mail', headerName: 'Mail', width: 200},
+  { field: 'Mail', headerName: 'Mail', width: 170},
   {
     field: 'Mensaje',
     headerName: 'Mensaje',
     description: 'This column has a value getter and is not sortable.',
     sortable: false,
-    width: 1000
+    width: 600
   },
 ];
 const rows = [
@@ -30,17 +31,21 @@ const rows = [
   { id: 4, Nombre: 'Barbara Hoffman', Mail: 'bhoffman@gmail.com', Mensaje: 'Buenas Agustin, estoy muy interesado en tu perfil te dejo mis datos para que me contactes' },
   { id: 5, Nombre: 'Rene Ledezma', Mail: 'rene_lede@gmail.com', Mensaje: 'Buenas Agustin, estoy muy interesado en tu perfil te dejo mis datos para que me contactes' }
  ];
-
 export default function ContactosPage() {
   return (
     <>
       <ExamplesNavbar />
       <ProfilePageHeader />
     
-            <Col className="ml-auto mr-auto" >
-      <div style={{ height: 400, width: '100%', alignContent:'center' }}>
-             
+      <div className="ml-auto mr-auto" lg = "6" >
+      <Col className="ml-auto mr-auto" lg = "6">
       <DataGrid 
+       sx={{
+        color: "#141414",
+        backgroundColor: "danger",
+        height: 400, width: '100%',
+        
+        }}
         rows={rows}
         columns={columns}
         initialState={{
@@ -50,8 +55,8 @@ export default function ContactosPage() {
         }}
         pageSizeOptions={[5, 10]}
       />
+ </Col>
     </div>
-    </Col>
     <DemoFooter />
     </>
  
