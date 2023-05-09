@@ -30,6 +30,27 @@ import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import ProfilePageHeader from "components/Headers/ProfilePageHeader.js";
 import DemoFooter from "components/Footers/DemoFooter.js";
 
+
+import { styled } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+
+
+
+import { makeStyles } from "@material-ui/core/styles";
+import InputLabel from "@material-ui/core/InputLabel";
+// core components
+import GridItem from "components/Grid/GridItem.js";
+import GridContainer from "components/Grid/GridContainer.js";
+import CustomInput from "components/CustomInput/CustomInput.js";
+import Button from "components/CustomButtons/Button.js";
+import Card from "components/Card/Card.js";
+import CardHeader from "components/Card/CardHeader.js";
+import CardAvatar from "components/Card/CardAvatar.js";
+import CardBody from "components/Card/CardBody.js";
+import CardFooter from "components/Card/CardFooter.js";
+
+
 function ProfilePage() {
   const [activeTab, setActiveTab] = React.useState("1");
 
@@ -52,6 +73,53 @@ function ProfilePage() {
       <ProfilePageHeader />
       <div className="section profile-content">
         <Container>
+        <GridContainer>
+          <GridItem xs={12} sm={12} md={4}>
+            <Card profile>
+              <CardAvatar profile>
+                <a href="#pablo" onClick={(e) => e.preventDefault()}>
+                  <img src={avatar} alt="..." />
+                </a>
+              </CardAvatar>
+              <CardBody profile>
+                <h6 className={classes.cardCategory}>SQL Developer</h6>
+                <h4 className={classes.cardTitle}>Paola Pérez</h4>
+                <p className={classes.description}>
+                  Desarrolladora SQL con 6 años de experiencia en el sector de la
+                  tecnologia con conocimientos de COBOL, python y SQL. Actualmente
+                  me encuentro en la busqueda de nuevos desafios que me permitan seguir
+                  creciendo profesionalmente.
+                </p>
+              </CardBody>
+            </Card>
+          </GridItem>
+          <GridItem xs={12} sm={12} md={4}>
+            <Card profile>
+              <CardAvatar profile>
+                <a href="#pablo" onClick={(e) => e.preventDefault()}>
+                  <img src={avatar} alt="..." />
+                </a>
+              </CardAvatar>
+              <CardBody profile>
+                <h6 className={classes.cardCategory}>SQL Developer</h6>
+                <h4 className={classes.cardTitle}>Paola Pérez</h4>
+                <p className={classes.description}>
+                  Desarrolladora SQL con 6 años de experiencia en el sector de la
+                  tecnologia con conocimientos de COBOL, python y SQL. Actualmente
+                  me encuentro en la busqueda de nuevos desafios que me permitan seguir
+                  creciendo profesionalmente.
+                </p>
+              </CardBody>
+            </Card>
+          </GridItem>
+          </GridContainer>
+       
+         
+         
+         {/*
+         
+         
+         
           <div className="owner">
             <div className="avatar">
               <img
@@ -78,7 +146,7 @@ function ProfilePage() {
               <br />
             </Col>
           </Row>
-          <br />
+          <br />*/}
        {/*    <div className="nav-tabs-navigation"> 
             <div className="nav-tabs-wrapper">
               <Nav role="tablist" tabs>
