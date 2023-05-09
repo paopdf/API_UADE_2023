@@ -42,10 +42,6 @@ function ProfilePageHeader() {
   return (
     <>
       <div
-        style={{
-          backgroundImage:
-            "url(" + require("assets/img/imagen-memoria.png") + ")"
-        }}
         className="page-header page-header-xs"
         data-parallax={true}
         ref={pageHeader}

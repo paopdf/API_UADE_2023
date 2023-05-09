@@ -72,14 +72,10 @@ function ExamplesNavbar() {
       <Container>
         <div className="navbar-translate">
             <NavbarBrand
-            data-placement="bottom"
-            to="/profile-page"
-            target="_blank"
-          
-            title="Home"
-            tag={Link}
           >
-            Home
+  <NavLink to="/profile-page" tag={Link}>
+          <h6>Home</h6>
+              </NavLink>
           </NavbarBrand>
       
           <button

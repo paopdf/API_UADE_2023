@@ -58,24 +58,19 @@ function RegisterPage() {
               >
               <Row>
                 <Col className="ml-auto mr-auto" lg="6">
-                  <div className="social-line text-left">         
-                    <Row>   
+                  <div className="social-line text-center">         
                       <TextField
                         required
                         id="outlined-required"
                         label="Nombre"
                         defaultValue=""
                       />
-                    </Row>
-                    <Row>
                       <TextField
                         required
                         id="outlined-disabled"
                         label="Apellido"
                         defaultValue=""
                       />
-                    </Row>                        
-                    <Row>
                       <TextField
                         required
                         id="outlined-disabled"
@@ -83,8 +78,6 @@ function RegisterPage() {
                         type="email"
                         defaultValue=""
                       />
-                    </Row>
-                    <Row>
                       <TextField
                         required
                         id="outlined-disabled"
@@ -92,18 +85,18 @@ function RegisterPage() {
                         type="password"
                         defaultValue=""
                       />
-                    </Row> 
+                  
+                  <div className="col text-center" >
                     <NavLink to="/profile-page" tag={Link}>
                     <Button
-                      block
                       className="btn-round"
-                      color="primary"
-                      type ="submit"
+                      color="danger"
                     >
                       Registrar
                     </Button>
                     </NavLink> 
             
+                    </div>
                   </div>
                 </Col>
               </Row> 

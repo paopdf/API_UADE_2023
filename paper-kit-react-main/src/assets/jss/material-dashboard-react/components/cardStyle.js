@@ -22,13 +22,30 @@ const cardStyle = {
     fontSize: ".875rem",
   },
   cardPlain: {
-    background: "transparent",
+    
     boxShadow: "none",
+    border: "0",
+    marginBottom: "10px",
+    borderRadius: "6px",
+    color: "rgba(" + hexToRgb(whiteColor) + ", 0.87)",
+    background: "transparent",
+    width: "100%",
+    position: "relative",
+    display: "flex",
+    flexDirection: "column",
+    minWidth: "0",
+    wordWrap: "break-word",
+    fontSize: "2rem",
+    
+    marginTop: "100px",
+    textAlign: "center",
   },
   cardProfile: {
     marginTop: "30px",
     textAlign: "center",
+    background:"#f4a261"
   },
+  
   cardChart: {
     "& p": {
       marginTop: "0px",

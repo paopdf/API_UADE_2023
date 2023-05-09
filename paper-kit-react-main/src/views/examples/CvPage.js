@@ -88,6 +88,8 @@ const styles = {
     fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
     marginBottom: "3px",
     textDecoration: "none",
+    fontSize: 16,
+    textAlign: "left"
   },
 };
 
@@ -125,8 +127,10 @@ function CvPage() {
                 </a>
               </CardAvatar>
               <CardBody profile>
-                <h6 className={classes.cardCategory}>SQL Developer</h6>
                 <h4 className={classes.cardTitle}>Paola Pérez</h4>
+               
+                <h6 className={classes.cardCategory}>SQL Developer </h6>
+                
                 <p className={classes.description}>
                   Desarrolladora SQL con 6 años de experiencia en el sector de la
                   tecnologia con conocimientos de COBOL, python y SQL. Actualmente
@@ -147,8 +151,8 @@ function CvPage() {
           </GridItem>
           <GridItem xs={12} sm={12} md={8}>
             <Card>
-              <CardHeader color="primary">
-                <h4 className={classes.cardTitleWhite}>Fortalezas</h4>
+              <CardHeader color="primary" Header>
+                <h4 >Fortalezas</h4>
               </CardHeader>
               <CardBody>
                 <GridContainer>
@@ -166,7 +170,7 @@ function CvPage() {
             </Card>
             <Card>
               <CardHeader color="primary">
-                <h4 className={classes.cardTitleWhite}>Certificaciones</h4>
+                <h4>Certificaciones</h4>
               </CardHeader>
               <CardBody>
                 <GridContainer>
@@ -186,7 +190,7 @@ function CvPage() {
             </Card>
             <Card>
               <CardHeader color="primary">
-                <h4 className={classes.cardTitleWhite}>Formacion</h4>
+                <h4>Formacion</h4>
               </CardHeader>
               <CardBody>
                 <GridContainer>
@@ -201,7 +205,7 @@ function CvPage() {
             </Card>
             <Card>
               <CardHeader color="primary">
-                <h4 className={classes.cardTitleWhite}>Aptitudes</h4>
+                <h4 >Aptitudes</h4>
               </CardHeader>
               <CardBody>
                 <GridContainer>
@@ -238,7 +242,7 @@ function CvPage() {
             </Card>
             <Card>
               <CardHeader color="primary">
-                <h4 className={classes.cardTitleWhite}>Experiencia</h4>
+                <h4 >Experiencia</h4>
               </CardHeader>
               <CardBody>
                 <GridContainer>

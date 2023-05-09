@@ -53,50 +53,9 @@ import CardBody from "components/Card/CardBody.js";
 import CardFooter from "components/Card/CardFooter.js";
 
 
-const styles = {
-  cardCategoryWhite: {
-    color: "rgba(255,255,255,.62)",
-    margin: "0",
-    fontSize: "14px",
-    marginTop: "0",
-    marginBottom: "0",
-  },
-  cardTitleWhite: {
-    color: "#FFFFFF",
-    marginTop: "0px",
-    minHeight: "auto",
-    fontWeight: "300",
-    fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
-    marginBottom: "3px",
-    textDecoration: "none",
-  },
-  cardContentBlack: {
-    color: "#141414",
-    marginTop: "0px",
-    minHeight: "auto",
-    fontWeight: "300",
-    fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
-    marginBottom: "3px",
-    textDecoration: "none",
-  },
-  
-  cardInfoBlack: {
-    color: "#141414",
-    marginTop: "0px",
-    minHeight: "auto",
-    fontWeight: "100",
-    fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
-    marginBottom: "3px",
-    textDecoration: "none",
-  },
-};
-
-
-const useStyles = makeStyles(styles);
 
 function ProfilePage() {
   const [activeTab, setActiveTab] = React.useState("1");
-  const classes = useStyles();
  
   const toggle = (tab) => {
     if (activeTab !== tab) {
@@ -115,28 +74,45 @@ function ProfilePage() {
     <>
       <ExamplesNavbar />
       <ProfilePageHeader />
-      <div className="section profile-content">
+      <div className="section profile-content" lg = "6"   
+      style={{
+          backgroundImage:
+            "url(" + require("assets/img/shutterstock_2254881335.jpg") + ")",
+          backgroundSize: "100%"
+        }}
+      >
+      
         <Container>
         <GridContainer>
+      
+        <GridItem xs={12} sm={12} md={6} align="bottom-center">
+        </GridItem>
           <GridItem xs={12} sm={12} md={6} align="bottom-center">
-            <Card profile>
-               <CardBody profile>
-                <h4 className={classes.cardTitle}>Paola Pérez</h4>
-                <h6 className={classes.cardCategory}>Analista en Sistemas</h6>
-                <Row>
+            <Card plain>
+               <CardBody plain>
+                <h4 >Paola Pérez</h4>
+                <h6 >Analista en Sistemas</h6>
+                <p >
+                  Desarrolladora SQL con 6 años de experiencia en el sector de la
+                  tecnologia con conocimientos de COBOL, python y SQL. Actualmente
+                  me encuentro en la busqueda de nuevos desafios que me permitan seguir
+                  creciendo profesionalmente.
+                </p>
+                <div  className="col text-center">
+                
                 <NavLink to="/cv-page" tag={Link}>
                 
                   <Button block md={6}  className="btn-round" color="danger">
                     Acerca de mi
                   </Button>
                   </NavLink>
-                  <NavLink to="/contactos-page" tag={Link}>
+                  <NavLink to="/contact-page" tag={Link}>
                 
                   <Button block md={6} className="btn-round" color="danger">
                     Contactame
                   </Button>
                   </NavLink>
-                  </Row>
+                  </div>
               </CardBody>
             </Card>
           </GridItem>

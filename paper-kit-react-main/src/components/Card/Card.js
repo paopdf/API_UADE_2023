@@ -19,6 +19,7 @@ export default function Card(props) {
     [classes.card]: true,
     [classes.cardPlain]: plain,
     [classes.cardProfile]: profile,
+    
     [classes.cardChart]: chart,
     [className]: className !== undefined,
   });

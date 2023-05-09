@@ -62,16 +62,13 @@ function ProfilePage() {
               >
               <Row>
                 <Col className="ml-auto mr-auto" lg="6">
-                  <div className="social-line text-left">         
-                    <Row>   
+                  <div className="social-line text-center">         
                       <TextField
                         required
                         id="outlined-required"
                         label="Nombre y Apellido"
                         defaultValue=""
                       />
-                    </Row>
-                    <Row>
                       <TextField
                         required
                         id="outlined-disabled"
@@ -79,8 +76,6 @@ function ProfilePage() {
                         type="mail"
                         defaultValue=""
                       />
-                    </Row>
-                    <Row>
                       <TextField
                         fullWidth
                         id="outlined-multiline-static"
@@ -89,15 +84,22 @@ function ProfilePage() {
                         rows={4}
                         defaultValue=""
                         />
-                    </Row>
+   <div>
+                 
+                    <div className="col text-center" >
+     
                     <Button
-                      block
+                      
                       className="btn-round"
-                      color="primary"
-                      type ="submit"
+                      color="danger"
                     >
                       Enviar
                     </Button>
+                    </div>
+                    </div>
+                 
+
+
                   </div>
                 </Col>
               </Row> 
