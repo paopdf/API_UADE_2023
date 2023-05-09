@@ -22,9 +22,11 @@ import React from "react";
 import {
   Container,
   Row,
-  Col
+  Col,
+  NavLink
 } from "reactstrap";
 
+import { Link } from "react-router-dom";
 // core components
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import ProfilePageHeader from "components/Headers/ProfilePageHeader.js";
@@ -51,9 +53,51 @@ import CardBody from "components/Card/CardBody.js";
 import CardFooter from "components/Card/CardFooter.js";
 
 
+const styles = {
+  cardCategoryWhite: {
+    color: "rgba(255,255,255,.62)",
+    margin: "0",
+    fontSize: "14px",
+    marginTop: "0",
+    marginBottom: "0",
+  },
+  cardTitleWhite: {
+    color: "#FFFFFF",
+    marginTop: "0px",
+    minHeight: "auto",
+    fontWeight: "300",
+    fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
+    marginBottom: "3px",
+    textDecoration: "none",
+  },
+  cardContentBlack: {
+    color: "#141414",
+    marginTop: "0px",
+    minHeight: "auto",
+    fontWeight: "300",
+    fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
+    marginBottom: "3px",
+    textDecoration: "none",
+  },
+  
+  cardInfoBlack: {
+    color: "#141414",
+    marginTop: "0px",
+    minHeight: "auto",
+    fontWeight: "100",
+    fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
+    marginBottom: "3px",
+    textDecoration: "none",
+  },
+};
+
+
+const useStyles = makeStyles(styles);
+
 function ProfilePage() {
   const [activeTab, setActiveTab] = React.useState("1");
-
+  const classes = useStyles();
+ 
   const toggle = (tab) => {
     if (activeTab !== tab) {
       setActiveTab(tab);
@@ -74,41 +118,25 @@ function ProfilePage() {
       <div className="section profile-content">
         <Container>
         <GridContainer>
-          <GridItem xs={12} sm={12} md={4}>
+          <GridItem xs={12} sm={12} md={6} align="bottom-center">
             <Card profile>
-              <CardAvatar profile>
-                <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                  <img src={avatar} alt="..." />
-                </a>
-              </CardAvatar>
-              <CardBody profile>
-                <h6 className={classes.cardCategory}>SQL Developer</h6>
+               <CardBody profile>
                 <h4 className={classes.cardTitle}>Paola Pérez</h4>
-                <p className={classes.description}>
-                  Desarrolladora SQL con 6 años de experiencia en el sector de la
-                  tecnologia con conocimientos de COBOL, python y SQL. Actualmente
-                  me encuentro en la busqueda de nuevos desafios que me permitan seguir
-                  creciendo profesionalmente.
-                </p>
-              </CardBody>
-            </Card>
-          </GridItem>
-          <GridItem xs={12} sm={12} md={4}>
-            <Card profile>
-              <CardAvatar profile>
-                <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                  <img src={avatar} alt="..." />
-                </a>
-              </CardAvatar>
-              <CardBody profile>
-                <h6 className={classes.cardCategory}>SQL Developer</h6>
-                <h4 className={classes.cardTitle}>Paola Pérez</h4>
-                <p className={classes.description}>
-                  Desarrolladora SQL con 6 años de experiencia en el sector de la
-                  tecnologia con conocimientos de COBOL, python y SQL. Actualmente
-                  me encuentro en la busqueda de nuevos desafios que me permitan seguir
-                  creciendo profesionalmente.
-                </p>
+                <h6 className={classes.cardCategory}>Analista en Sistemas</h6>
+                <Row>
+                <NavLink to="/cv-page" tag={Link}>
+                
+                  <Button block md={6}  className="btn-round" color="danger">
+                    Acerca de mi
+                  </Button>
+                  </NavLink>
+                  <NavLink to="/contactos-page" tag={Link}>
+                
+                  <Button block md={6} className="btn-round" color="danger">
+                    Contactame
+                  </Button>
+                  </NavLink>
+                  </Row>
               </CardBody>
             </Card>
           </GridItem>

@@ -63,7 +63,7 @@ const styles = {
   },
   cardTitleWhite: {
     color: "#FFFFFF",
-    marginTop: "0px",
+    marginTop: "100px",
     minHeight: "auto",
     fontWeight: "300",
     fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",

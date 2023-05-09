@@ -75,10 +75,11 @@ function ExamplesNavbar() {
             data-placement="bottom"
             to="/profile-page"
             target="_blank"
-            title="CV"
+          
+            title="Home"
             tag={Link}
           >
-            
+            Home
           </NavbarBrand>
       
           <button
@@ -99,12 +100,12 @@ function ExamplesNavbar() {
           isOpen={navbarCollapse}
         >
           <Nav navbar>
-            <NavItem>
+      {/*       <NavItem>
               <NavLink to="/profile-page" tag={Link}>
                 <i className="nc-icon nc-layout-11" /> Home
               </NavLink>
             </NavItem>
-            <NavItem>
+           <NavItem>
               <NavLink
                 to="/cv-page" tag={Link} // agregar en index y armar archivo en views
               >
@@ -118,7 +119,7 @@ function ExamplesNavbar() {
                 <i className="nc-icon nc-book-bookmark" /> Contactar Profesional
               </NavLink>
             </NavItem>
-            <NavItem>
+         */}   <NavItem>
               <NavLink
                 data-placement="bottom"
                 href="https://twitter.com/CreativeTim?ref=creativetim"
