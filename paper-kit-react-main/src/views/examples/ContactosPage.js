@@ -38,7 +38,7 @@ export default function ContactosPage() {
       <ProfilePageHeader />
     
       <div className="ml-auto mr-auto" lg = "6" >
-      <Col className="ml-auto mr-auto" lg = "6">
+      <Col >
       <DataGrid 
        sx={{
         color: "#141414",
