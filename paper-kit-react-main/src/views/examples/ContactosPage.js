@@ -42,7 +42,10 @@ export default function ContactosPage() {
       <DataGrid 
        sx={{
         color: "#141414",
-        backgroundColor: "danger",
+        marginTop: "20px",
+        
+        marginBottom: "20px",
+        backgroundColor: "#e9c46a",
         height: 400, width: '100%',
         
         }}
