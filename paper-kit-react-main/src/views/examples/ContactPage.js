@@ -72,6 +72,12 @@ function ProfilePage() {
                       <TextField
                         required
                         id="outlined-disabled"
+                        label="Telefono"
+                        defaultValue=""
+                      />
+                      <TextField
+                        required
+                        id="outlined-disabled"
                         label="Email"
                         type="mail"
                         defaultValue=""

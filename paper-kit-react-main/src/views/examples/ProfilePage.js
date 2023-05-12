@@ -74,11 +74,12 @@ function ProfilePage() {
     <>
       <ExamplesNavbar />
       <ProfilePageHeader />
-      <div className="section profile-content" lg = "6"   
+      <div className="home" lg = "6"   
       style={{
+          height: "auto",
           backgroundImage:
             "url(" + require("assets/img/shutterstock_2254881335.jpg") + ")",
-          backgroundSize: "100%"
+            backgroundSize: "cover"
         }}
       >
       

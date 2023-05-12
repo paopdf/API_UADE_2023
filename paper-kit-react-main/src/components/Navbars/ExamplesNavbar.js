@@ -96,29 +96,10 @@ function ExamplesNavbar() {
           isOpen={navbarCollapse}
         >
           <Nav navbar>
-      {/*       <NavItem>
-              <NavLink to="/profile-page" tag={Link}>
-                <i className="nc-icon nc-layout-11" /> Home
-              </NavLink>
-            </NavItem>
-           <NavItem>
-              <NavLink
-                to="/cv-page" tag={Link} // agregar en index y armar archivo en views
-              >
-                <i className="nc-icon nc-book-bookmark" /> Curriculum
-              </NavLink>
-            </NavItem>
             <NavItem>
               <NavLink
-                to="/contact-page" tag={Link} // agregar en index y armar archivo en views
-              >
-                <i className="nc-icon nc-book-bookmark" /> Contactar Profesional
-              </NavLink>
-            </NavItem>
-         */}   <NavItem>
-              <NavLink
                 data-placement="bottom"
-                href="https://twitter.com/CreativeTim?ref=creativetim"
+                href="https://twitter.com/paopdf"
                 target="_blank"
                 title="Follow us on Twitter"
               >
@@ -129,7 +110,7 @@ function ExamplesNavbar() {
             <NavItem>
               <NavLink
                 data-placement="bottom"
-                href="https://www.facebook.com/CreativeTim?ref=creativetim"
+                href="https://www.facebook.com/paola.perez.73594479"
                 target="_blank"
                 title="Like us on Facebook"
               >
@@ -140,7 +121,7 @@ function ExamplesNavbar() {
             <NavItem>
               <NavLink
                 data-placement="bottom"
-                href="https://www.instagram.com/CreativeTimOfficial?ref=creativetim"
+                href="https://www.instagram.com/paodpf/"
                 target="_blank"
                 title="Follow us on Instagram"
               >
@@ -151,7 +132,7 @@ function ExamplesNavbar() {
             <NavItem>
               <NavLink
                 data-placement="bottom"
-                href="https://www.github.com/CreativeTimOfficial?ref=creativetim"
+                href="https://github.com/paopdf"
                 target="_blank"
                 title="Star on GitHub"
               >

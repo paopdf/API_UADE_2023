@@ -51,7 +51,7 @@ import CardBody from "components/Card/CardBody.js";
 import CardFooter from "components/Card/CardFooter.js";
 
 
-import avatar from "assets/img/ryan.jpg";
+import avatar from "assets/img/pao.jpg";
 
 const styles = {
   cardCategoryWhite: {
@@ -76,7 +76,7 @@ const styles = {
     minHeight: "auto",
     fontWeight: "300",
     fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
-    marginBottom: "3px",
+    marginBottom: "2px",
     textDecoration: "none",
   },
   
@@ -84,11 +84,11 @@ const styles = {
     color: "#141414",
     marginTop: "0px",
     minHeight: "auto",
-    fontWeight: "100",
+    fontWeight: "500",
     fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
     marginBottom: "3px",
     textDecoration: "none",
-    fontSize: 16,
+    fontSize: 18,
     textAlign: "left"
   },
 };
@@ -132,17 +132,16 @@ function CvPage() {
                 <h6 className={classes.cardCategory}>SQL Developer </h6>
                 
                 <p className={classes.description}>
-                  Desarrolladora SQL con 6 años de experiencia en el sector de la
-                  tecnologia con conocimientos de COBOL, python y SQL. Actualmente
-                  me encuentro en la busqueda de nuevos desafios que me permitan seguir
-                  creciendo profesionalmente.
+                  Poseo experiencia en el diseño, implementación y mantenimiento de bases de datos relacionales en SQL Server
+                  de igual manera deasrrollo procedimientos almacenados y funciones en SQL para encapsular lógica de negocio compleja.
+                  En el ultimo año he estado enfocandome en comprender los requisitos comerciales y traducirlos en consultas y análisis específicos
+                  integrando SQL con Python 
                 </p>
               </CardBody>
             </Card>
             <Card profile>
               <CardBody profile>
                 <h4 className={classes.cardInfoBlack}>Email: pao_pdpf@hotmail.com</h4>
-                <h4 className={classes.cardInfoBlack}>Perfil Linkedin</h4>
                 <h4 className={classes.cardInfoBlack}>Telefono: 1135985869</h4>
                 <h4 className={classes.cardInfoBlack}>Palermo, CABA</h4>
           
