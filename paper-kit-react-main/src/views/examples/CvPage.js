@@ -23,7 +23,9 @@ import React from "react";
 import {
   Container,
   Row,
-  Col
+  Col,
+  NavItem,
+  NavLink
 } from "reactstrap";
 
 // core components
@@ -34,8 +36,6 @@ import DemoFooter from "components/Footers/DemoFooter.js";
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
-
-
 
 import { makeStyles } from "@material-ui/core/styles";
 import InputLabel from "@material-ui/core/InputLabel";
@@ -126,7 +126,6 @@ function CvPage() {
                   <img src={avatar} alt="..." />
                 </a>
               </CardAvatar>
-              <CardBody profile>
                 <h4 className={classes.cardTitle}>Paola Pérez</h4>
                
                 <h6 className={classes.cardCategory}>SQL Developer </h6>
@@ -137,18 +136,7 @@ function CvPage() {
                   En el ultimo año he estado enfocandome en comprender los requisitos comerciales y traducirlos en consultas y análisis específicos
                   integrando SQL con Python 
                 </p>
-              </CardBody>
             </Card>
-            <Card profile>
-              <CardBody profile>
-                <h4 className={classes.cardInfoBlack}>Email: pao_pdpf@hotmail.com</h4>
-                <h4 className={classes.cardInfoBlack}>Telefono: 1135985869</h4>
-                <h4 className={classes.cardInfoBlack}>Palermo, CABA</h4>
-          
-              </CardBody>
-            </Card>
-          </GridItem>
-          <GridItem xs={12} sm={12} md={8}>
             <Card>
               <CardHeader color="primary" Header>
                 <h4 >Fortalezas</h4>
@@ -169,6 +157,68 @@ function CvPage() {
             </Card>
             <Card>
               <CardHeader color="primary">
+                <h4>Formacion</h4>
+              </CardHeader>
+              <CardBody>
+                <GridContainer>
+                <GridItem>
+                   <h5 className={classes.cardContentBlack}>Titulo: Analista en Sistemas </h5>
+                  <h5 className={classes.cardContentBlack}>Instituto Otorgante: UADE</h5>
+                  <h5 className={classes.cardContentBlack}>Año: 2023</h5>
+                  </GridItem>
+                 
+                </GridContainer>
+          
+              </CardBody>
+            </Card>
+    
+            <Card profile>
+              <CardBody profile>
+                <h4 className={classes.cardInfoBlack}>Email: pao_pdpf@hotmail.com</h4>
+                <h4 className={classes.cardInfoBlack}>Telefono: 1135985869</h4>
+                <h4 className={classes.cardInfoBlack}>Palermo, CABA</h4>
+              <NavLink
+                href="https://twitter.com/paopdf"
+                target="_blank"
+                title="Follow us on Twitter"
+              >
+                <i className="fa fa-twitter" />
+                <p className="d-lg-none">Twitter</p>
+              </NavLink>
+              <NavLink
+                data-placement="bottom"
+                href="https://www.facebook.com/paola.perez.73594479"
+                target="_blank"
+                title="Like us on Facebook"
+              >
+                <i className="fa fa-facebook-square" />
+                <p className="d-lg-none">Facebook</p>
+              </NavLink>
+              <NavLink
+                data-placement="bottom"
+                href="https://www.instagram.com/paodpf/"
+                target="_blank"
+                title="Follow us on Instagram"
+              >
+                <i className="fa fa-instagram" />
+                <p className="d-lg-none">Instagram</p>
+              </NavLink>
+              <NavLink
+                data-placement="bottom"
+                href="https://github.com/paopdf"
+                target="_blank"
+                title="Star on GitHub"
+              >
+                <i className="fa fa-github" />
+                <p className="d-lg-none">GitHub</p>
+              </NavLink>
+            
+              </CardBody>
+            </Card>
+          </GridItem>
+          <GridItem xs={12} sm={12} md={8}>
+                <Card>
+              <CardHeader color="primary">
                 <h4>Certificaciones</h4>
               </CardHeader>
               <CardBody>
@@ -182,21 +232,6 @@ function CvPage() {
                   <h5 className={classes.cardContentBlack}>Titulo Certificacion: Python Avanzado </h5>
                   <h5 className={classes.cardContentBlack}>Instituto Otorgante: Educacion IT</h5>
                   <h5 className={classes.cardContentBlack}>Año: 2020</h5>
-                  </GridItem>
-                </GridContainer>
-          
-              </CardBody>
-            </Card>
-            <Card>
-              <CardHeader color="primary">
-                <h4>Formacion</h4>
-              </CardHeader>
-              <CardBody>
-                <GridContainer>
-                  <GridItem xs={12} sm={12} md={5}>
-                  <h5 className={classes.cardContentBlack}>Titulo: Analista en Sistemas </h5>
-                  <h5 className={classes.cardContentBlack}>Instituto Otorgante: UADE</h5>
-                  <h5 className={classes.cardContentBlack}>Año: 2023</h5>
                   </GridItem>
                 </GridContainer>
           
