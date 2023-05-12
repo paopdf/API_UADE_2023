@@ -14,11 +14,38 @@ import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import ProfilePageHeader from "components/Headers/ProfilePageHeader.js";
 import DemoFooter from "components/Footers/DemoFooter.js";
 
-// reactstrap components
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
+
 import {
   Row,
   Col
 } from "reactstrap";
+
+
+const style = {
+
+    position: 'absolute',
+  
+    top: '50%',
+  
+    left: '50%',
+  
+    transform: 'translate(-50%, -50%)',
+  
+    width: 400,
+  
+    bgcolor: 'background.paper',
+  
+    border: '2px solid #000',
+  
+    boxShadow: 24,
+  
+    p: 4,
+  
+  };// reactstrap components
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -52,7 +79,32 @@ const rows = [
   
 ];
 
+function BasicModal(mensaje) {
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
+  return (
+    <div>
+      <Button onClick={handleOpen}>Ver mensaje</Button>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <Typography id="modal-modal-title" variant="h6" component="h2">
+            Mensaje
+          </Typography>
+          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+            {mensaje}
+          </Typography>
+        </Box>
+      </Modal>
+    </div>
+  );
+}
 
 export default function ContactosPage() {
   return (
@@ -64,7 +116,7 @@ export default function ContactosPage() {
       <Col >
 
     <TableContainer component={Paper}>
-      <Table sx={{  minWidth: 700 , marginTop : "50px", marginBottom : "70px",marginLeft : "20x",marginRight : "20px"}} aria-label="customized table">
+      <Table sx={{  width: "50%" , marginTop : "60px", marginBottom : "90px",marginLeft : "auto",marginRight : "auto"}} aria-label="customized table">
         <TableHead>
           <TableRow>
             <StyledTableCell>Nombre</StyledTableCell>
@@ -81,7 +133,9 @@ export default function ContactosPage() {
               </StyledTableCell>
               <StyledTableCell align="left">{row.telefono}</StyledTableCell>
               <StyledTableCell align="left">{row.mail}</StyledTableCell>
-              <StyledTableCell align="left">{row.mensaje}</StyledTableCell>
+              <StyledTableCell align="left"> 
+              {BasicModal(row.mensaje)} 
+              </StyledTableCell>
             </StyledTableRow>
           ))}
         </TableBody>
