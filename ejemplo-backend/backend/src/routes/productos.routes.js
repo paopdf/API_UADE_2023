@@ -1,5 +1,5 @@
 const {Router} = require('express');
-const productosController = require('../controllers/productos.controller');
+const ContactosController = require('../controllers/Contactos.controller');
 const jwtValidator = require('../middlewares/jwtValidator');
 const checkFields = require('../middlewares/validateFields');
 const { check } = require("express-validator");
@@ -11,29 +11,29 @@ router.get('/',
     check('jwt').not().isEmpty(),
     checkFields
 ],
-jwtValidator, productosController.getProducts); //GET PRODUCTOS
+jwtValidator, ContactosController.getContacts); //GET Contactos
 router.get('/:id',[
     check('jwt').not().isEmpty(),
     checkFields
-],jwtValidator,productosController.getProductById); //GET PRODUCTOS BY ID
+],jwtValidator,ContactosController.getContactById); //GET Contactos BY ID
 
 router.post('/',[
     check('jwt').not().isEmpty(),
-    check('product.descripcion').not().isEmpty(),
-    check('product.categoria').not().isEmpty(),
-    check('product.precio_unitario').not().isEmpty(),
-    check('product.url_img').not().isEmpty(),
+    check('contact.descripcion').not().isEmpty(),
+    check('contact.categoria').not().isEmpty(),
+    check('contact.precio_unitario').not().isEmpty(),
+    check('contact.url_img').not().isEmpty(),
     checkFields
-],jwtValidator,productosController.createProduct); //POST PRODUCTOS
+],jwtValidator,ContactosController.createContact); //POST Contactos
 
 router.put('/:id',[
     check('jwt').not().isEmpty(),
     checkFields
-],jwtValidator,productosController.updateProduct) //PUT PRODUCTOS
+],jwtValidator,ContactosController.updateContact) //PUT Contactos
 
 router.delete('/:id',[
     check('jwt').not().isEmpty(),
     checkFields
-],jwtValidator,productosController.deleteProduct) //DELETE PRODUCTOS 
+],jwtValidator,ContactosController.deleteContact) //DELETE Contactos 
 
 module.exports = router;

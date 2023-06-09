@@ -4,7 +4,7 @@
 * Paper Kit React - v1.3.1
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/paper-kit-react
+* Contact Page: https://www.creative-tim.com/contact/paper-kit-react
 
 * Copyright 2022 Creative Tim (https://www.creative-tim.com)
 * Licensed under MIT (https://github.com/creativetimofficial/paper-kit-react/blob/main/LICENSE.md)
@@ -57,10 +57,10 @@ function LandingPage() {
           <Container>
             <Row>
               <Col className="ml-auto mr-auto" md="8">
-                <h2 className="title">Let's talk product</h2>
+                <h2 className="title">Let's talk contact</h2>
                 <h5 className="description">
                   This is the paragraph where you can write more details about
-                  your product. Keep you user engaged by providing meaningful
+                  your contact. Keep you user engaged by providing meaningful
                   information. Remember that by this time, the user is curious,
                   otherwise he wouldn't scroll to get here. Add a button if you
                   want the user to see more.
@@ -168,7 +168,7 @@ function LandingPage() {
                     <a href="#pablo" onClick={(e) => e.preventDefault()}>
                       <div className="author">
                         <CardTitle tag="h4">Henry Ford</CardTitle>
-                        <h6 className="card-category">Product Manager</h6>
+                        <h6 className="card-category">Contact Manager</h6>
                       </div>
                     </a>
                     <p className="card-description text-center">

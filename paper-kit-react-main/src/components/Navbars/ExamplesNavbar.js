@@ -4,7 +4,7 @@
 * Paper Kit React - v1.3.1
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/paper-kit-react
+* Contact Page: https://www.creative-tim.com/contact/paper-kit-react
 
 * Copyright 2022 Creative Tim (https://www.creative-tim.com)
 * Licensed under MIT (https://github.com/creativetimofficial/paper-kit-react/blob/main/LICENSE.md)
@@ -163,7 +163,7 @@ function ExamplesNavbar() {
               <Button
                 className="btn-round"
                 color="danger"
-                href="https://www.creative-tim.com/product/paper-kit-pro-react?ref=pkr-examples-navbar"
+                href="https://www.creative-tim.com/contact/paper-kit-pro-react?ref=pkr-examples-navbar"
                 target="_blank"
               >
                 <i className="nc-icon nc-spaceship"></i> Sign up
@@ -173,7 +173,7 @@ function ExamplesNavbar() {
               <Button
                 className="btn-round"
                 color="danger"
-                href="https://www.creative-tim.com/product/paper-kit-pro-react?ref=pkr-examples-navbar"
+                href="https://www.creative-tim.com/contact/paper-kit-pro-react?ref=pkr-examples-navbar"
                 target="_blank"
               >
                 <i className="nc-icon nc-spaceship"></i> Sign in

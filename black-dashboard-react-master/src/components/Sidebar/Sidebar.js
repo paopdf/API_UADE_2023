@@ -4,7 +4,7 @@
 * Black Dashboard React v1.2.1
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/black-dashboard-react
+* Contact Page: https://www.creative-tim.com/contact/black-dashboard-react
 * Copyright 2022 Creative Tim (https://www.creative-tim.com)
 * Licensed under MIT (https://github.com/creativetimofficial/black-dashboard-react/blob/master/LICENSE.md)
 
@@ -141,7 +141,7 @@ function Sidebar(props) {
                 );
               })}
               <li className="active-pro">
-                <ReactstrapNavLink href="https://www.creative-tim.com/product/black-dashboard-pro-react?ref=bdr-user-archive-sidebar-upgrade-pro">
+                <ReactstrapNavLink href="https://www.creative-tim.com/contact/black-dashboard-pro-react?ref=bdr-user-archive-sidebar-upgrade-pro">
                   <i className="tim-icons icon-spaceship" />
                   <p>Upgrade to PRO</p>
                 </ReactstrapNavLink>

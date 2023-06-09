@@ -2,7 +2,7 @@
 
 ![version](https://img.shields.io/badge/version-1.2.1-blue.svg) ![license](https://img.shields.io/badge/license-MIT-blue.svg) [![GitHub issues open](https://img.shields.io/github/issues/creativetimofficial/black-dashboard-react.svg?maxAge=2592000)]() [![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/creativetimofficial/black-dashboard-react.svg?maxAge=2592000)]() [![Chat](https://img.shields.io/badge/chat-on%20discord-7289da.svg)](https://discord.gg/E4aHAQy)
 
-![Product Gif](./github-assets/black-dashboard-react.gif)
+![Contact Gif](./github-assets/black-dashboard-react.gif)
 
 Black Dashboard React is a beautiful [Bootstrap 4](http://getbootstrap.com/), [Reacstrap](https://reactstrap.github.io/) and [React](https://reactjs.org/) ([create-react-app](https://github.com/facebook/create-react-app)) Admin Dashboard with a huge number of components built to fit together and look amazing. If you are looking for a tool to manage and visualize data about your business, this dashboard is the thing for you. It combines colors that are easy on the eye, spacious cards, beautiful typography, and graphics.
 Black Dashboard React comes packed with all plugins that you might need inside a project and documentation on how to get started. It is light and easy to use, and also very powerful.
@@ -36,12 +36,12 @@ We are very excited to share this dashboard with you and we look forward to hear
 
 ## Versions
 
-[<img src="./github-assets/html.png" width="60" height="60" />](https://www.creative-tim.com/product/black-dashboard)
-[<img src="./github-assets/react.svg" width="60" height="60" />](https://www.creative-tim.com/product/black-dashboard-react)[<img src="./github-assets/vuejs.png" width="60" height="60" />](https://www.creative-tim.com/product/vue-black-dashboard)
+[<img src="./github-assets/html.png" width="60" height="60" />](https://www.creative-tim.com/contact/black-dashboard)
+[<img src="./github-assets/react.svg" width="60" height="60" />](https://www.creative-tim.com/contact/black-dashboard-react)[<img src="./github-assets/vuejs.png" width="60" height="60" />](https://www.creative-tim.com/contact/vue-black-dashboard)
 
 | HTML                                                                                                                                                                | React                                                                                                                                                                   | Vue                                                                                                                                                                        |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [![Black Dashboard HTML](https://s3.amazonaws.com/creativetim_bucket/products/93/thumb/opt_bd_thumbnail.jpg)](https://www.creative-tim.com/product/black-dashboard) | [![Black Dashboard React](https://s3.amazonaws.com/creativetim_bucket/products/136/thumb/opt_bd_react.jpg)](https://www.creative-tim.com/product/black-dashboard-react) | [![Vue Black Dashboard](https://s3.amazonaws.com/creativetim_bucket/products/99/thumb/opt_bd_vue_thumbnail.jpg)](https://www.creative-tim.com/product/vue-black-dashboard) |
+| [![Black Dashboard HTML](https://s3.amazonaws.com/creativetim_bucket/contacts/93/thumb/opt_bd_thumbnail.jpg)](https://www.creative-tim.com/contact/black-dashboard) | [![Black Dashboard React](https://s3.amazonaws.com/creativetim_bucket/contacts/136/thumb/opt_bd_react.jpg)](https://www.creative-tim.com/contact/black-dashboard-react) | [![Vue Black Dashboard](https://s3.amazonaws.com/creativetim_bucket/contacts/99/thumb/opt_bd_vue_thumbnail.jpg)](https://www.creative-tim.com/contact/vue-black-dashboard) |
 
 ## Demo
 
@@ -57,7 +57,7 @@ Quick start options:
 
 - Clone the repo: `git clone https://github.com/creativetimofficial/black-dashboard-react.git`.
 - [Download from Github](https://github.com/creativetimofficial/black-dashboard-react/archive/master.zip).
-- [Download from Creative Tim](https://www.creative-tim.com/product/black-dashboard-react).
+- [Download from Creative Tim](https://www.creative-tim.com/contact/black-dashboard-react).
 
 ## Documentation
 
@@ -140,7 +140,7 @@ At present, we officially aim to support the last two versions of the following 
 ## Resources
 
 - Demo: https://demos.creative-tim.com/black-dashboard-react/#/dashboard
-- Download Page: https://www.creative-tim.com/product/black-dashboard-react
+- Download Page: https://www.creative-tim.com/contact/black-dashboard-react
 - Documentation: https://demos.creative-tim.com/black-dashboard-react/#/documentation/tutorial
 - License Agreement: https://www.creative-tim.com/license
 - Support: https://www.creative-tim.com/contact-us
@@ -156,7 +156,7 @@ We use GitHub Issues as the official bug tracker for the Black Dashboard React. 
 
 ## Technical Support or Questions
 
-If you have questions or need help integrating the product please [contact us](https://www.creative-tim.com/contact-us) instead of opening an issue.
+If you have questions or need help integrating the contact please [contact us](https://www.creative-tim.com/contact-us) instead of opening an issue.
 
 ## Licensing
 
@@ -165,11 +165,11 @@ If you have questions or need help integrating the product please [contact us](h
 
 ## Useful Links
 
-More products from Creative Tim: <https://www.creative-tim.com/products>
+More contacts from Creative Tim: <https://www.creative-tim.com/contacts>
 
 Tutorials: <https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w>
 
-Freebies: <https://www.creative-tim.com/products>
+Freebies: <https://www.creative-tim.com/contacts>
 
 Affiliate Program (earn money): <https://www.creative-tim.com/affiliates/new>
 

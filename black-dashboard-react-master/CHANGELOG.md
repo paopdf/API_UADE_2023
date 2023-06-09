@@ -54,12 +54,12 @@ typescript                        3.8.3   →    4.1.2
 
 ### Important Notes
 
-**The jQuery and TypeScript dependencies are installed only to stop console warnings on install. They are not actually used in our product. So the product is not based on jQuery, and it is not based on TypeScript!**
+**The jQuery and TypeScript dependencies are installed only to stop console warnings on install. They are not actually used in our contact. So the contact is not based on jQuery, and it is not based on TypeScript!**
 
 ### Warning
 
-_Some warnings may appear when running the installation command, but they do not affect the UI or the functionality of the product._
-_The following warnings will appear when running the installation command, but they do not affect the UI or the functionality of the product (they will be solved in our next update - they come from the plugins that we are using, and they haven't yet upgraded to the latest React version):_
+_Some warnings may appear when running the installation command, but they do not affect the UI or the functionality of the contact._
+_The following warnings will appear when running the installation command, but they do not affect the UI or the functionality of the contact (they will be solved in our next update - they come from the plugins that we are using, and they haven't yet upgraded to the latest React version):_
 
 ```
 npm WARN react-popper@1.3.7 requires a peer of react@0.14.x || ^15.0.0 || ^16.0.0 but none is installed. You must install peer dependencies yourself.
@@ -119,7 +119,7 @@ reactstrap                   6.5.0   →     8.4.1
 
 ### Warning
 
-**There are some errors that come from the react-google-maps components, since they are using old React v16 syntax, this, at the moment does not affect the UI or the functionality of the product. If the issue will perssit in React v17, we will drop the usage of these components and replace them with other maps components. The following warnings on installation could not be solved, due to some of our dependencies, however, they do not affect the functionality or the UI of the product:**
+**There are some errors that come from the react-google-maps components, since they are using old React v16 syntax, this, at the moment does not affect the UI or the functionality of the contact. If the issue will perssit in React v17, we will drop the usage of these components and replace them with other maps components. The following warnings on installation could not be solved, due to some of our dependencies, however, they do not affect the functionality or the UI of the contact:**
 
 ```
 npm WARN deprecated request@2.88.2: request has been deprecated, see https://github.com/request/request/issues/3142
@@ -127,7 +127,7 @@ npm WARN deprecated core-js@2.6.11: core-js@<3 is no longer maintained and not r
 npm WARN deprecated popper.js@1.16.1: Popper changed home, find its new releases at @popperjs/core
 ```
 
-**Also, the above, are only present in development, and not in production.**
+**Also, the above, are only present in development, and not in contaction.**
 
 ## [1.0.0] 2018-11-29
 

@@ -14,7 +14,7 @@ app.get("/", (req, res) => {
   res.status(200).send({ message: "You are connected to the project" });
 });
 
-app.use("/api/productos", require("./src/routes/productos.routes"));
+app.use("/api/Contactos", require("./src/routes/Contactos.routes"));
 app.use("/api/usuarios", require("./src/routes/usuarios.routes"));
 
 app.listen(process.env.PORT, () =>{

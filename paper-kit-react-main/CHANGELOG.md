@@ -46,7 +46,7 @@ typescript         3.9.5   →    4.2.3
 ### Warning
 
 _When doing a clean install, you might have some warnings, those come from `node_modules` and do not affect the project in any way._
-_The following two error might occur while doing a clean install - They do not affect the product in any way:_
+_The following two error might occur while doing a clean install - They do not affect the contact in any way:_
 _npm WARN react-datetime@3.0.4 requires a peer of react@^16.5.0 but none is installed. You must install peer dependencies yourself._
 _npm WARN @babel/plugin-bugfix-v8-spread-parameters-in-optional-chaining@7.13.12 requires a peer of @babel/core@^7.13.0 but none is installed. You must install peer dependencies yourself._
 
@@ -55,7 +55,7 @@ _npm WARN @babel/plugin-bugfix-v8-spread-parameters-in-optional-chaining@7.13.12
 ### Bug fixing
 
 - https://github.com/creativetimofficial/paper-kit-react/issues/2 (changed the fonts import to `~assets/fonts` and also added assets path inside `jsconfig.json` file)
-- Other Paper React products issues solved here as well
+- Other Paper React contacts issues solved here as well
   - https://github.com/creativetimofficial/ct-paper-kit-pro-react/issues/2
   - https://github.com/creativetimofficial/paper-dashboard-react/issues/15
   - https://github.com/creativetimofficial/paper-dashboard-react/issues/8
@@ -114,9 +114,9 @@ typescript          3.5.2   →     3.9.5
 
 ### Warning
 
-_All the following products: Paper Kit React, Paper Dashboard React, Paper Kit PRO React and Paper Dashboard PRO React have been updated together, and thus, we've added to all of them the same version of 1.2.0 - we may have skipped some versions for some of the above products, we've done so, since we want all Paper & React products to share the same versions._
-_While in development some of the plugins that were used for this product will throw some warnings - note, this only happens in development, the UI or the functionality of the product is not affected, also, if the issues will persist in React 17, we'll drop usage of those plugins, and replace them with other ones._
-_Warnings might appear while doing an npm install - they do not affect the UI or the functionality of the product, and they appear because of NodeJS and not from the product itself._
+_All the following contacts: Paper Kit React, Paper Dashboard React, Paper Kit PRO React and Paper Dashboard PRO React have been updated together, and thus, we've added to all of them the same version of 1.2.0 - we may have skipped some versions for some of the above contacts, we've done so, since we want all Paper & React contacts to share the same versions._
+_While in development some of the plugins that were used for this contact will throw some warnings - note, this only happens in development, the UI or the functionality of the contact is not affected, also, if the issues will persist in React 17, we'll drop usage of those plugins, and replace them with other ones._
+_Warnings might appear while doing an npm install - they do not affect the UI or the functionality of the contact, and they appear because of NodeJS and not from the contact itself._
 
 ## [1.0.0] 2019-06-26
 

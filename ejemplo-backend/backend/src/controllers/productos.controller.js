@@ -1,127 +1,127 @@
-const ProductosService = require("../services/productos.service");
+const ContactosService = require("../services/Contactos.service");
 const AuthService = require("../services/auth.service");
 let instance = null;
 
-class ProductosController {
+class ContactosController {
   static getInstance() {
     if (!instance) {
-      return new ProductosController();
+      return new ContactosController();
     }
     return instance;
   }
 
-  async getProducts(req, res) {
+  async getContacts(req, res) {
     try {
-      const products = await ProductosService.getProducts();
-      return res.status(200).json(products);
+      const contacts = await ContactosService.getContacts();
+      return res.status(200).json(contacts);
     } catch (err) {
       console.error(err);
       return res.status(500).json({
-        method: "getProducts",
+        method: "getContacts",
         message: err,
       });
     }
   }
 
-  async getProductById(req, res) {
+  async getContactById(req, res) {
     try {
       const id = req.params.id;
-      let product = await ProductosService.getProductById(id);
-      if (!product) {
+      let contact = await ContactosService.getContactById(id);
+      if (!contact) {
         return res.status(404).json({
-          method: "getProductById",
+          method: "getContactById",
           message: "Not Found",
         });
       }
-      return res.status(200).json(product);
+      return res.status(200).json(contact);
     } catch (err) {
       console.error(err);
       return res.status(500).json({
-        method: "getProductById",
+        method: "getContactById",
         message: err,
       });
     }
   }
 
-  async getProductByCategory(req, res) {
+  async getContactByCategory(req, res) {
     try {
       const cat = req.params.cat;
-      let product = await ProductosService.getProductByCategory(cat);
-      return res.status(200).json(product);
+      let contact = await ContactosService.getContactByCategory(cat);
+      return res.status(200).json(contact);
     } catch (err) {
       console.error(err);
       return res.status(500).json({
-        method: "getProductByCategory",
+        method: "getContactByCategory",
         message: err,
       });
     }
   }
 
-  async createProduct(req, res) {
+  async createContact(req, res) {
     try {
-      const { product } = req.body;
-      let isRegistered = await ProductosService.isProductRegistered(
-        product.descripcion
+      const { contact } = req.body;
+      let isRegistered = await ContactosService.isContactRegistered(
+        contact.descripcion
       );
       if (!isRegistered) {
-        let newProduct = await ProductosService.createProduct(product);
+        let newContact = await ContactosService.createContact(contact);
 
         return res.status(201).json({
           message: "Created!",
-          product: newProduct,
+          contact: newContact,
         });
       }
       return res.status(400).json({
-        message: "The product is already registered",
+        message: "The contact is already registered",
       });
     } catch (err) {
       console.error(err);
       return res.status(500).json({
-        method: "createProduct",
+        method: "createContact",
         message: err.message,
       });
     }
   }
 
-  async updateProduct(req, res) {
+  async updateContact(req, res) {
     try {
-      let product = await ProductosService.getProductById(req.params.id);
-      if (!product) {
+      let contact = await ContactosService.getContactById(req.params.id);
+      if (!contact) {
         return res
           .status(404)
-          .json({ method: "updateProduct", message: "Not Found" });
+          .json({ method: "updateContact", message: "Not Found" });
       }
-      const modifiedProduct = await ProductosService.updateProduct(
+      const modifiedContact = await ContactosService.updateContact(
         req.params.id,
         req.body,
-        product
+        contact
       );
-      return res.status(200).json(modifiedProduct);
+      return res.status(200).json(modifiedContact);
     } catch (err) {
       console.error(err);
       return res.status(500).json({
-        method: "updateProduct",
+        method: "updateContact",
         message: err,
       });
     }
   }
 
-  async deleteProduct(req, res) {
+  async deleteContact(req, res) {
     try {
-      let isProduct = await ProductosService.getProductById(req.params.id);
-      if (isProduct) {
-        await ProductosService.deleteProduct(req.params.id);
+      let isContact = await ContactosService.getContactById(req.params.id);
+      if (isContact) {
+        await ContactosService.deleteContact(req.params.id);
         return res.status(204).json({ message: "No Content" });
       }
       return res.status(404).json({ message: "Not Found" });
     } catch (err) {
       console.error(err);
       return res.status(500).json({
-        method: "deleteProduct",
+        method: "deleteContact",
         message: err,
       });
     }
   }
 }
 
-module.exports = new ProductosController();
+module.exports = new ContactosController();

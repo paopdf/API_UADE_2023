@@ -2,7 +2,7 @@ const gulp = require("gulp");
 const gap = require("gulp-append-prepend");
 
 gulp.task("licenses", async function () {
-  // this is to add Creative Tim licenses in the production mode for the minified js
+  // this is to add Creative Tim licenses in the contaction mode for the minified js
   gulp
     .src("build/static/js/*chunk.js", { base: "./" })
     .pipe(
@@ -12,7 +12,7 @@ gulp.task("licenses", async function () {
 * Black Dashboard React - v1.2.0
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/black-dashboard-react
+* Contact Page: https://www.creative-tim.com/contact/black-dashboard-react
 * Copyright 2020 Creative Tim (https://www.creative-tim.com)
 * Licensed under MIT (https://github.com/creativetimofficial/black-dashboard-react/blob/master/LICENSE.md)
 
@@ -26,7 +26,7 @@ gulp.task("licenses", async function () {
     )
     .pipe(gulp.dest("./", { overwrite: true }));
 
-  // this is to add Creative Tim licenses in the production mode for the minified html
+  // this is to add Creative Tim licenses in the contaction mode for the minified html
   gulp
     .src("build/index.html", { base: "./" })
     .pipe(
@@ -36,7 +36,7 @@ gulp.task("licenses", async function () {
 * Black Dashboard React - v1.2.0
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/black-dashboard-react
+* Contact Page: https://www.creative-tim.com/contact/black-dashboard-react
 * Copyright 2020 Creative Tim (https://www.creative-tim.com)
 * Licensed under MIT (https://github.com/creativetimofficial/black-dashboard-react/blob/master/LICENSE.md)
 
@@ -50,7 +50,7 @@ gulp.task("licenses", async function () {
     )
     .pipe(gulp.dest("./", { overwrite: true }));
 
-  // this is to add Creative Tim licenses in the production mode for the minified css
+  // this is to add Creative Tim licenses in the contaction mode for the minified css
   gulp
     .src("build/static/css/*chunk.css", { base: "./" })
     .pipe(
@@ -60,7 +60,7 @@ gulp.task("licenses", async function () {
 * Black Dashboard React - v1.2.0
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/black-dashboard-react
+* Contact Page: https://www.creative-tim.com/contact/black-dashboard-react
 * Copyright 2020 Creative Tim (https://www.creative-tim.com)
 * Licensed under MIT (https://github.com/creativetimofficial/black-dashboard-react/blob/master/LICENSE.md)
 

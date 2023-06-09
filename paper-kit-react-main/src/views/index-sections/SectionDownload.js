@@ -4,7 +4,7 @@
 * Paper Kit React - v1.3.1
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/paper-kit-react
+* Contact Page: https://www.creative-tim.com/contact/paper-kit-react
 
 * Copyright 2022 Creative Tim (https://www.creative-tim.com)
 * Licensed under MIT (https://github.com/creativetimofficial/paper-kit-react/blob/main/LICENSE.md)
@@ -41,7 +41,7 @@ function SectionDownload() {
               <Button
                 className="btn-round"
                 color="danger"
-                href="http://www.creative-tim.com/product/paper-kit-react?ref=pkr-index-page"
+                href="http://www.creative-tim.com/contact/paper-kit-react?ref=pkr-index-page"
                 target="_blank"
               >
                 Download free React

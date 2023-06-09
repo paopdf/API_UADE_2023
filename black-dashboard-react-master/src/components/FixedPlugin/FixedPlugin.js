@@ -4,7 +4,7 @@
 * Black Dashboard React v1.2.1
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/black-dashboard-react
+* Contact Page: https://www.creative-tim.com/contact/black-dashboard-react
 * Copyright 2022 Creative Tim (https://www.creative-tim.com)
 * Licensed under MIT (https://github.com/creativetimofficial/black-dashboard-react/blob/master/LICENSE.md)
 
@@ -86,7 +86,7 @@ function FixedPlugin(props) {
           </li>
           <li className="button-container">
             <Button
-              href="https://www.creative-tim.com/product/black-dashboard-react"
+              href="https://www.creative-tim.com/contact/black-dashboard-react"
               color="primary"
               block
               className="btn-round"
@@ -106,7 +106,7 @@ function FixedPlugin(props) {
           <li className="header-title">Want more components?</li>
           <li className="button-container">
             <Button
-              href="https://www.creative-tim.com/product/black-dashboard-pro-react"
+              href="https://www.creative-tim.com/contact/black-dashboard-pro-react"
               className="btn-round"
               disabled
               block

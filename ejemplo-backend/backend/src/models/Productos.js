@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
 
-const ProductosSchema = new mongoose.Schema({
+const ContactosSchema = new mongoose.Schema({
     descripcion:String,
     categoria:String,
     precio_unitario:Number,
     url_img:String
 });
 
-const Productos = mongoose.model('Productos',ProductosSchema);
+const Contactos = mongoose.model('Contactos',ContactosSchema);
 
-module.exports = Productos;
+module.exports = Contactos;
