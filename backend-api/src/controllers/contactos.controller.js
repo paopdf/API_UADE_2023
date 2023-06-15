@@ -59,30 +59,20 @@ class ContactosController {
 
   async createContact(req, res) {
     try {
-      const { contact } = req.body;
-/*      let isRegistered = await ContactosService.isContactRegistered(
-        contact.nombre
-      );
-      if (!isRegistered) {
-  */  
-      let newContact = await ContactosService.createContact(contact);
-
-      return res.status(201).json({
-        message: "Created!",
-        contact: newContact,
-      });
-     // }
-    /*  return res.status(400).json({
-        message: "The contact is already registered",
-      });*/
-    } catch (err) {
-      console.error(err);
-      return res.status(500).json({
-        method: "createContact",
-        message: err.message,
-      });
+        let newUser = await ContactosService.createContact(req.body);
+  
+        return res.status(201).json({
+          message: "Created!",
+          usuario: newUser,
+        });
+      } catch (err) {
+        console.error(err);
+        return res.status(500).json({
+          method: "createContact",
+          message: err.message,
+        });
+      }
     }
-  }
 
   async updateContact(req, res) {
     try {

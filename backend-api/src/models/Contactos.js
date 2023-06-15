@@ -1,9 +1,10 @@
 const mongoose = require('mongoose');
+const { Schema } = mongoose;
 
-const ContactosSchema = new mongoose.Schema({
-    nombre:String,
+const ContactosSchema = new Schema({
+    name:String,
     telefono:String,
-    mail:String,
+    email:String,
     mensaje:String
 });
 

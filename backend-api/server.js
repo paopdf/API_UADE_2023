@@ -22,8 +22,8 @@ app.use("/api/usuarios", require("./src/routes/usuarios.routes"));
 app.use("/api/contactos", require("./src/routes/contactos.routes"));
 
 // Le digo a la aplicacion escuchame este puerto
-app.listen(5000, () => {
-    console.log('Server running on port :' ,5000);      
+app.listen(process.env.PORT, () => {
+    console.log('Server running on port :' ,process.env.PORT);      
 });
 
-// los proyectos se corren poniendo node y el nombre del archivo ej: node server o en el package.json puedo definir strats en un scripts.
+// los proyectos se corren poniendo node y el name del archivo ej: node server o en el package.json puedo definir strats en un scripts.

@@ -31,9 +31,9 @@ class ContactosService {
     }
   }
 
-  async isContactRegistered(nombre) {
+  async isContactRegistered(name) {
     try {
-      let contact = await ContactosModel.exists({ nombre });
+      let contact = await ContactosModel.exists({ name });
       if(contact){
         return true;
       }

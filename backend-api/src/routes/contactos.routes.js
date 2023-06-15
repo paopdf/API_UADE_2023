@@ -5,17 +5,18 @@ const checkFields = require("../middlewares/validateFields");
 
 const router = Router();
 
-router.get("/", contactosController.getContactos);
+router.get("/", contactosController.getContacts);
 
 router.post(
     "/",
     [
-        check("nombre").not().isEmpty(),
+        check("name").not().isEmpty(),
         check("telefono").not().isEmpty(),
         check("email").not().isEmpty(),
         check("mensaje").not().isEmpty(),
         checkFields,
     ],
-    contactosController.createContacto
+    contactosController.createContact
 );
 
+module.exports = router;
