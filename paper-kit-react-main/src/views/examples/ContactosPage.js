@@ -7,6 +7,9 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import { useEffect, useState,useRef } from 'react';
+import getContacts from '../../api/contactos.api';
+
 
 
 // core components
@@ -49,7 +52,7 @@ const style = {
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
-    backgroundColor: "#2a9d8f",
+    backgroundColor: "#287271",
     color: theme.palette.common.black
   },
   [`&.${tableCellClasses.body}`]: {
@@ -68,47 +71,34 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-function createData(nombre, telefono, mail, mensaje) {
-  return { nombre, telefono, mail, mensaje};
-}
-
-const rows = [
-  createData('Barbara Hoffman','1157386926', 'bhoffman@hotmail.com', 'Buenas, estoy interesada en tu perfil, me gustaria contactarme con vos para hablar sobre el trabajo'),
-  createData('Matias Rivero','1157453826','mati_rivero@gmail.com','Hola Paola, me llamo Matias y trabajo en ASD. Me gustaría hablar contigo sobre una oportunidad de trabajo que tenemos disponible en nuestra empresa que creo que podría interesarte. Te dejo mi contacto'),
-  createData('Matias Wisnieski','1157263826', 'mw198@hotmail.com','Buenaas Paola, Me impresionó tu experiencia y habilidades y creo que podrías ser un buen ajuste para una de nuestras posiciones abiertas')
-  
-];
-
-function BasicModal(mensaje) {
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-
-  return (
-    <div>
-      <Button onClick={handleOpen}>Ver mensaje</Button>
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Mensaje
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            {mensaje}
-          </Typography>
-        </Box>
-      </Modal>
-    </div>
-  );
-}
 
 export default function ContactosPage() {
+
+  const [rows, setContacts] = useState([]);
+  console.log("Me traigo el token una vez que estoy logeado")
+  const accessToken = sessionStorage.getItem('access-token')
+  const [showModal, setShowModal] = useState(false);
+  const [selectedMessage, setSelectedMessage] = useState('');
+ 
+  useEffect(() => {
+    console.log("Pido la lista de productos con mi token de sesion")
+    getContacts(accessToken,setContacts);
+  }, [setContacts,accessToken]);
+
+ 
+  const openModal = (message) => {
+    setSelectedMessage(message);
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setSelectedMessage('');
+    setShowModal(false);
+  };
+
   return (
     <>
+    
       <ExamplesNavbar />
       <ProfilePageHeader />
     
@@ -126,15 +116,15 @@ export default function ContactosPage() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
-            <StyledTableRow key={row.nombre}>
+          {rows.map((row,index) => (
+            <StyledTableRow key={row.name}>
               <StyledTableCell component="th" scope="row">
-                {row.nombre}
+                {row.name}
               </StyledTableCell>
               <StyledTableCell align="left">{row.telefono}</StyledTableCell>
-              <StyledTableCell align="left">{row.mail}</StyledTableCell>
+              <StyledTableCell align="left">{row.email}</StyledTableCell>
               <StyledTableCell align="left"> 
-              {BasicModal(row.mensaje)} 
+              <button onClick={() => openModal(row.mensaje)}>Ver Mensaje</button>
               </StyledTableCell>
             </StyledTableRow>
           ))}
@@ -142,9 +132,42 @@ export default function ContactosPage() {
       </Table>
     </TableContainer>
  </Col>
+ {showModal && (
+        <div className="modal">
+          <div className="modal-content">
+            <h3>Mensaje</h3>
+            <p>{selectedMessage}</p>
+            <Button onClick={closeModal} >Close</Button>
+          </div>
+        </div>
+      )}
+
+      <style>
+        {`
+          .modal {
+                        position: fixed;
+                        top: 20;
+                        left: 20;
+                        width: 10;
+                        height: 2;
+                        background-color: rgba(0, 0, 0, 0);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                      }
+
+                      .modal-content {
+                        background-color: white;
+                        padding: 20px;
+                        border-radius: 4px;
+                        text-align: center;
+                        width: 50%;
+                        
+                      }
+        `}
+      </style>
     </div>
     <DemoFooter />
     </>
- 
-    );
+  );
 }

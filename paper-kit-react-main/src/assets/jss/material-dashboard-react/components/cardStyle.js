@@ -43,7 +43,7 @@ const cardStyle = {
   cardProfile: {
     marginTop: "30px",
     textAlign: "center",
-    background:"#f4a261"
+    background:"#298880"
   },
   
   cardChart: {

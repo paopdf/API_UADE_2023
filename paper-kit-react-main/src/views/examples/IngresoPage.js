@@ -16,8 +16,9 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from "react";
-
+import login from '../../api/login.api';
+import {useNavigate} from 'react-router-dom'
+import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 // reactstrap components
 import { Button, Card, Form, Input, Container, Row, Col,NavLink } from "reactstrap";
@@ -26,13 +27,34 @@ import { Button, Card, Form, Input, Container, Row, Col,NavLink } from "reactstr
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 
 function IngresoPage() {
-  document.documentElement.classList.remove("nav-open");
-  React.useEffect(() => {
-    document.body.classList.add("register-page");
-    return function cleanup() {
-      document.body.classList.remove("register-page");
-    };
-  });
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+  
+    let response = await login(email,password);
+      if (response.status === 200) { 
+        sessionStorage.setItem("access-token",response.token); 
+        let url = "/contactos-page";//especificar url de products
+        setTimeout(() => {
+          window.location.assign(url); 
+        },1500
+        )
+      } 
+    
+
+  };
+
   return (
     <>
       <ExamplesNavbar />
@@ -48,24 +70,17 @@ function IngresoPage() {
             <Col className="ml-auto mr-auto" lg="4">
               <Card className="card-register ml-auto mr-auto">
                 <h3 className="title mx-auto">Bienvenido</h3>
-                <Form className="register-form">
-                  <label>Email</label>
-                  <Input placeholder="Email" type="text" />
-                  <label>Password</label>
-                  <Input placeholder="Password" type="password" />
-                  <NavLink to="/contactos-page" tag={Link}>
-                
-                  <Button block className="btn-round" color="danger">
-                    Ingreso
-                  </Button>
-                  </NavLink>
-                
-                </Form>
+                <form className="register-form" onSubmit={handleSubmit}>
+                  <label>Email:</label>
+                  <Input  placeholder="Email" type="email" value={email} onChange={handleEmailChange} required />
+                  <label>Password:</label>
+                  <Input  placeholder="Password" type="password" value={password} onChange={handlePasswordChange} required />
+                  <Button block className="btn-round" color="danger" type="submit">Login</Button>
+                </form>   
                 <div className="forgot">
                   <Button
                     className="btn-link"
                     color="danger"
-                    href="#pablo"
                     onClick={(e) => e.preventDefault()}
                   >
                     Olvide la contraseña

@@ -105,13 +105,6 @@ function CvPage() {
     }
   };
 
-  document.documentElement.classList.remove("nav-open");
-  React.useEffect(() => {
-    document.body.classList.add("landing-page");
-    return function cleanup() {
-      document.body.classList.remove("landing-page");
-    };
-  });
   return (
   
  <>
@@ -177,6 +170,7 @@ function CvPage() {
                 <h4 className={classes.cardInfoBlack}>Email: pao_pdpf@hotmail.com</h4>
                 <h4 className={classes.cardInfoBlack}>Telefono: 1135985869</h4>
                 <h4 className={classes.cardInfoBlack}>Palermo, CABA</h4>
+              <Row>
               <NavLink
                 href="https://twitter.com/paopdf"
                 target="_blank"
@@ -212,7 +206,7 @@ function CvPage() {
                 <i className="fa fa-github" />
                 <p className="d-lg-none">GitHub</p>
               </NavLink>
-            
+              </Row>
               </CardBody>
             </Card>
           </GridItem>

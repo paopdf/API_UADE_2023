@@ -41,7 +41,7 @@ function SectionDownload() {
               <Button
                 className="btn-round"
                 color="danger"
-                href="http://www.creative-tim.com/product/paper-kit-react?ref=pkr-index-page"
+                href="http://www.creative-tim.com/product/profile-page?ref=pkr-index-page"
                 target="_blank"
               >
                 Download free React
@@ -111,7 +111,7 @@ function SectionDownload() {
               <Button
                 className="sharrre btn-round ml-2"
                 color="github-bg"
-                href="https://github.com/creativetimofficial/paper-kit-react?ref=creativetim"
+                href="https://github.com/creativetimofficial/profile-page?ref=creativetim"
                 target="_blank"
                 id="tooltip864353654"
               >

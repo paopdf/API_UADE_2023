@@ -22,7 +22,7 @@ Paper Kit React contains some pages already designed and implemented. Here is th
 
 - [Landing Page](https://demos.creative-tim.com/paper-kit-react/#/landing-page?ref=pkr-github-readme)
 - [Register](https://demos.creative-tim.com/paper-kit-react/#/register-page?ref=pkr-github-readme)
-- [Profile Page](https://demos.creative-tim.com/paper-kit-react/#/profile-page?ref=pkr-github-readme)
+- [Profile Page](https://demos.creative-tim.com/paper-kit-react/#/paper-kit-react?ref=pkr-github-readme)
 
 Tutorial and components
 
@@ -49,7 +49,7 @@ Once you download the archive, you will be able find a tutorial page inside it e
 
 | Register Page                                                                                                                                                                                                     | Landing Page                                                                                                                                                                                                   | Profile Page                                                                                                                                                                                                   |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [![Register Page](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/paper-kit-react/register.png)](https://demos.creative-tim.com/paper-kit-react/#/register-page?ref=pkr-github-readme) | [![Landing Page](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/paper-kit-react/landing.png)](https://demos.creative-tim.com/paper-kit-react/#/landing-page?ref=pkr-github-readme) | [![Profile Page](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/paper-kit-react/profile.png)](https://demos.creative-tim.com/paper-kit-react/#/profile-page?ref=pkr-github-readme) |
+| [![Register Page](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/paper-kit-react/register.png)](https://demos.creative-tim.com/paper-kit-react/#/register-page?ref=pkr-github-readme) | [![Landing Page](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/paper-kit-react/landing.png)](https://demos.creative-tim.com/paper-kit-react/#/landing-page?ref=pkr-github-readme) | [![Profile Page](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/paper-kit-react/profile.png)](https://demos.creative-tim.com/paper-kit-react/#/paper-kit-react?ref=pkr-github-readme) |
 
 [View More](https://demos.creative-tim.com/paper-kit-react/#/index?ref=pkr-github-readme)
 
@@ -70,7 +70,7 @@ The documentation for the Paper Kit React is hosted at our [website](https://dem
 Within the download you'll find the following directories and files:
 
 ```
-paper-kit-react
+profile-page
 .
 ├── CHANGELOG.md
 ├── ISSUE_TEMPLATE.md

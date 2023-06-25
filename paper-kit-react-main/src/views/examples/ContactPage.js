@@ -17,6 +17,9 @@
 
 */
 import React from "react";
+
+import postContact  from '../../api/contactar.api';
+import  { useState } from 'react';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 // reactstrap components
@@ -33,16 +36,53 @@ import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import ProfilePageHeader from "components/Headers/ProfilePageHeader.js";
 import DemoFooter from "components/Footers/DemoFooter.js";
 
-function ProfilePage() {
+
+const ContactPage = () => {
 
 
-  document.documentElement.classList.remove("nav-open");
-  React.useEffect(() => {
-    document.body.classList.add("profile-page");
-    return function cleanup() {
-      document.body.classList.remove("profile-page");
-    };
-  });
+  const [email, setEmail] = useState('');
+  const [telefono, settelefono] = useState('');
+  const [mensaje, setMensaje] = useState('');
+  const [name, setName] = useState('');
+  const [showModal, setShowModal] = useState(false);
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handletelefonoChange = (e) => {
+    settelefono(e.target.value);
+  };
+
+  const handleNameChange = (e) => {
+    setName(e.target.value);
+  };
+
+  const handleMensajeChange = (e) => {
+    setMensaje(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    postContact(name,telefono,email,mensaje)
+      .then(() => {
+        setShowModal(true);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+      
+      setEmail('');
+      settelefono('');  
+      setMensaje('');
+      setName('');
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
+
   return (
     <>
       <ExamplesNavbar />
@@ -62,54 +102,86 @@ function ProfilePage() {
               >
               <Row>
                 <Col className="ml-auto mr-auto" lg="6">
-                  <div className="social-line text-center">         
+                  <div className="social-line text-center">     
+                    <form >
                       <TextField
                         required
                         id="outlined-required"
                         label="Nombre y Apellido"
                         defaultValue=""
+                        value={name} 
+                        onChange={handleNameChange}
+                        type="text"
                       />
                       <TextField
                         required
-                        id="outlined-disabled"
+                        id="outlined-required"
                         label="Telefono"
                         defaultValue=""
+                        value={telefono} 
+                        onChange={handletelefonoChange}
+                        type="text" 
                       />
                       <TextField
                         required
-                        id="outlined-disabled"
+                        id="outlined-required"
                         label="Email"
-                        type="mail"
                         defaultValue=""
+                        value={email} 
+                        onChange={handleEmailChange}
+                        type="mail"
                       />
                       <TextField
-                        fullWidth
-                        id="outlined-multiline-static"
+                        required
+                        id="outlined-required"
                         label="Mensaje"
-                        multiline
-                        rows={4}
                         defaultValue=""
-                        />
-   <div>
-                 
-                    <div className="col text-center" >
-     
-                    <Button
-                      
-                      className="btn-round"
-                      color="danger"
-                    >
-                      Enviar
-                    </Button>
-                    </div>
-                    </div>
-                 
+                        value={mensaje} 
+                        onChange={handleMensajeChange}
+                        type="text"
+                      />
+                      <div className="col text-center" >
+                        <Button onClick={handleSubmit} className="btn-round" color="danger">
+                          Enviar
+                        </Button>
+                      </div>
+                    </form>   
+                    {showModal && (
+                      <div className="modal">
+                        <div className="modal-content">
+                          <h3>Formulario Enviado</h3>
+                          <p>Gracias por contactarte!</p>
+                          <Button onClick={closeModal} className="btn-round" color="danger">Close</Button>
+                        </div>
+                      </div>
+                    )}
+                    <style>
+                    {`
+                      .modal {
+                        position: absolute;
+                        top: 20;
+                        left: 20;
+                        width: 40;
+                        height: 400;
+                        background-color: rgba(0, 0, 0, 0);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                      }
 
-
+                      .modal-content {
+                        background-color: white;
+                        padding: 20px;
+                        border-radius: 4px;
+                        text-align: center;
+                      }
+                    `
+                    }
+                    </style>                   
                   </div>
                 </Col>
               </Row> 
-              </Box>
+            </Box>
           </Container>
         </div>
       <DemoFooter />
@@ -117,4 +189,4 @@ function ProfilePage() {
   );
 }
 
-export default ProfilePage;
+export default ContactPage;
