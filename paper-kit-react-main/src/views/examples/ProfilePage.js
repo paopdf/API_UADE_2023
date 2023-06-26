@@ -26,6 +26,8 @@ import {
   NavLink
 } from "reactstrap";
 
+import { UserProvider } from './UserContext';
+
 import { Link } from "react-router-dom";
 // core components
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
@@ -72,7 +74,9 @@ function ProfilePage() {
   });
   return (
     <>
+<UserProvider>
       <ExamplesNavbar />
+      </UserProvider>
       <ProfilePageHeader />
       <div className="home" lg = "6"   
       style={{

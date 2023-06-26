@@ -5,8 +5,6 @@ const checkFields = require("../middlewares/validateFields");
 
 const router = Router();
 
-router.get("/", usuariosController.getUsuarios); //GET USUARIOS
-
 router.post(
   "/",
   [
@@ -19,7 +17,7 @@ router.post(
   usuariosController.createUsuario
 ); //POST USUARIOS
 
-router.get("/:id", usuariosController.getUsuarioById); //GET USUARIOS BY ID
+
 router.post(
   "/login",
   [
@@ -30,4 +28,5 @@ router.post(
   usuariosController.login
 );
 
+router.get("/", usuariosController.getcountUsuarios); //GET count
 module.exports = router;

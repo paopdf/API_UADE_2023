@@ -13,7 +13,7 @@ import getContacts from '../../api/contactos.api';
 
 
 // core components
-import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
+import ExamplesNavbar from "components/Navbars/ContactosNavbar.js";
 import ProfilePageHeader from "components/Headers/ProfilePageHeader.js";
 import DemoFooter from "components/Footers/DemoFooter.js";
 
@@ -75,13 +75,11 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 export default function ContactosPage() {
 
   const [rows, setContacts] = useState([]);
-  console.log("Me traigo el token una vez que estoy logeado")
   const accessToken = sessionStorage.getItem('access-token')
   const [showModal, setShowModal] = useState(false);
   const [selectedMessage, setSelectedMessage] = useState('');
  
   useEffect(() => {
-    console.log("Pido la lista de productos con mi token de sesion")
     getContacts(accessToken,setContacts);
   }, [setContacts,accessToken]);
 

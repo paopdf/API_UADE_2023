@@ -20,8 +20,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 // nodejs library that concatenates strings
 import classnames from "classnames";
-import  { useContext } from 'react';
-import { UserContext } from 'views/examples/UserContext.js';
+import { useHistory } from 'react-router-dom';
+
+
+import { useNavigate  } from 'react-router-dom';
 // reactstrap components
 import {
   Collapse,
@@ -35,12 +37,19 @@ import {
 } from "reactstrap";
 
 function ExamplesNavbar() {
+  
+  const navigate = useNavigate();
   const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
   const [navbarCollapse, setNavbarCollapse] = React.useState(false);
 
   const toggleNavbarCollapse = () => {
     setNavbarCollapse(!navbarCollapse);
     document.documentElement.classList.toggle("nav-open");
+  };
+
+  const logout = () => {
+    sessionStorage.removeItem("access-token");
+    navigate('/profile-page'); // Redirecciona al inicio
   };
   
   React.useEffect(() => {
@@ -56,17 +65,18 @@ function ExamplesNavbar() {
       ) {
         setNavbarColor("navbar-transparent");
       }
-    }; 
+    };
+
     window.addEventListener("scroll", updateNavbarColor);
-   return function cleanup() {
+
+    return function cleanup() {
       window.removeEventListener("scroll", updateNavbarColor);
     };
-  }
-  );
-  console.log("va a la funcion");
-  const userCount = useContext(UserContext);
-  console.log("volvio de la funcion");
-console.log(userCount);
+  });
+  
+  const handleLogout = () => {
+    logout();
+  };
   return (
     <Navbar
       className={classnames("fixed-top", navbarColor)}
@@ -100,26 +110,13 @@ console.log(userCount);
           isOpen={navbarCollapse}
         >
           <Nav navbar>
-          {userCount === 0 && (
-  <NavItem>
-    <Button 
-      className="btn-round"
-      color="danger"
-      to="/register-page" tag={Link}
-    >
-      <i className="nc-icon nc-spaceship"></i> Sign up
-    </Button>
-  </NavItem>
-)}
-
-            <NavItem>
+              <NavItem>
               <Button
                 className="btn-round"
                 color="danger"
-                to="/ingreso-page" tag={Link}
-
+                onClick={handleLogout}
               >
-                <i className="nc-icon nc-spaceship"></i> Sign in
+                <i className="nc-icon nc-spaceship"></i> Cerrar sesión
               </Button>
             </NavItem>
           </Nav>

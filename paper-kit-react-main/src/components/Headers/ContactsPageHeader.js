@@ -21,27 +21,35 @@ import React from "react";
 // reactstrap components
 
 // core components
-import IndexHeader from "components/Headers/IndexHeader.js";
-import DemoFooter from "components/Footers/DemoFooter.js";
 
-// index sections
+function ContactsPageHeader() {
+  let pageHeader = React.createRef();
 
-function Index() {
-  document.documentElement.classList.remove("nav-open");
   React.useEffect(() => {
-    document.body.classList.add("index");
-    return function cleanup() {
-      document.body.classList.remove("index");
-    };
+    if (window.innerWidth < 991) {
+      const updateScroll = () => {
+        let windowScrollTop = window.pageYOffset / 3;
+        pageHeader.current.style.transform =
+          "translate3d(0," + windowScrollTop + "px,0)";
+      };
+      window.addEventListener("scroll", updateScroll);
+      return function cleanup() {
+        window.removeEventListener("scroll", updateScroll);
+      };
+    }
   });
+
   return (
     <>
-      <IndexHeader />
-      <div className="main">
-        <DemoFooter />
+      <div
+        className="page-header page-header-xs"
+        data-parallax={true}
+        ref={pageHeader}
+      >
+        <div className="filter" />
       </div>
     </>
   );
 }
 
-export default Index;
+export default ContactsPageHeader;

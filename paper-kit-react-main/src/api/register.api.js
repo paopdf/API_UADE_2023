@@ -17,9 +17,8 @@ const register = async (name,lastname,email,password) => {
       mode:'cors'
     };
     
-    let response = await fetch("http://localhost:8080/api/usuarios/", requestOptions);
+    let response = await fetch("http://localhost:8080/api/usuarios", requestOptions);
     let jsonData = await response.json();
-
     return jsonData;
 }
 

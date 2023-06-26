@@ -33,6 +33,7 @@ import DemoFooter from "components/Footers/DemoFooter.js";
 import register  from '../../api/register.api';
 import  { useState } from 'react';
 
+
 function RegisterPage() {
 
   const [email, setEmail] = useState('');
@@ -40,6 +41,19 @@ function RegisterPage() {
   const [password, setpassword] = useState('');
   const [name, setName] = useState('');
   const [showModal, setShowModal] = useState(false);
+  const [selectedMessage, setSelectedMessage] = useState('');
+   
+  const openModal = (message) => {
+    setSelectedMessage(message);
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setSelectedMessage('');
+    setShowModal(false);
+  };
+
+
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -57,24 +71,20 @@ function RegisterPage() {
     setpassword(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    register(name,lastname,email,password)
-      .then(() => {
-      setShowModal(true);
-    })
-    .catch((error) => {
-      console.error(error);
-    });
+    let response = await register(name,lastname,email,password)
+     if (response.message === 'Created!') {
+      openModal("Usuario Registrado con exito");
+    }
+    else {
+      openModal("Error, usuario ya existe");
+    }
     setEmail('');
     setlastname('');
     setpassword('');
     setName('');
 }
-const closeModal = () => {
-  setShowModal(false);
-};
-
   return (
     <>
       <ExamplesNavbar />
@@ -126,7 +136,7 @@ const closeModal = () => {
                       <TextField
                         required
                         id="outlined-required"
-                        label="Passwrod"
+                        label="Password"
                         defaultValue=""
                         value={password} 
                         onChange={handlepasswordChange}
@@ -139,22 +149,23 @@ const closeModal = () => {
                       </div>
                     </form>   
                     {showModal && (
-                      <div className="modal">
-                        <div className="modal-content">
-                          <h3>Usuario Registrado</h3>
-                          <p>Fue creado con exito</p>
-                          <Button onClick={closeModal} className="btn-round" color="danger">Close</Button>
-                        </div>
-                      </div>
-                    )}
-                    <style>
-                    {`
-                      .modal {
-                        position: absolute;
+        <div className="modal">
+          <div className="modal-content">
+            <h3>{selectedMessage}</h3>
+            <h3> </h3>
+            <Button onClick={closeModal} className="btn-round" left= "1" color="danger">Close </Button>
+          </div>
+        </div>
+      )}
+
+      <style>
+        {`
+          .modal {
+                        position: fixed;
                         top: 20;
                         left: 20;
-                        width: 40;
-                        height: 400;
+                        width: 10;
+                        height: 2;
                         background-color: rgba(0, 0, 0, 0);
                         display: flex;
                         align-items: center;
@@ -166,11 +177,12 @@ const closeModal = () => {
                         padding: 20px;
                         border-radius: 4px;
                         text-align: center;
+                        width: 40%;
+                        
                       }
-                    `
-                    }
-                    </style>                   
-                  </div>
+        `}
+      </style>
+                    </div>
                 </Col>
               </Row> 
             </Box>

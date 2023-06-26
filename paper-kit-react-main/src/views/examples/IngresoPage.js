@@ -30,6 +30,7 @@ function IngresoPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   
+  const [showModal, setShowModal] = useState(false);
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
@@ -51,10 +52,17 @@ function IngresoPage() {
         },1500
         )
       } 
+      else {
+       setShowModal(true);
+        setEmail('');
+        setPassword('');
+      }
     
 
   };
-
+  const closeModal = () => {
+    setShowModal(false);
+  };
   return (
     <>
       <ExamplesNavbar />
@@ -77,16 +85,40 @@ function IngresoPage() {
                   <Input  placeholder="Password" type="password" value={password} onChange={handlePasswordChange} required />
                   <Button block className="btn-round" color="danger" type="submit">Login</Button>
                 </form>   
-                <div className="forgot">
-                  <Button
-                    className="btn-link"
-                    color="danger"
-                    onClick={(e) => e.preventDefault()}
-                  >
-                    Olvide la contraseña
-                  </Button>
-                </div>
-              </Card>
+                {showModal && (
+                      <div className="modal">
+                        <div className="modal-content">
+                          <h3>Error</h3>
+                          <p>El usuario o contraseña ingresados son erroneos</p>
+                          <Button onClick={closeModal} className="btn-round" color="danger">Close</Button>
+                        </div>
+                      </div>
+                    )}
+                    <style>
+                    {`
+                      .modal {
+                        position: absolute;
+                        top: 20;
+                        left: 20;
+                        width: 40;
+                        height: 400;
+                        background-color: rgba(0, 0, 0, 0);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                      }
+
+                      .modal-content {
+                        background-color: white;
+                        padding: 20px;
+                        border-radius: 4px;
+                        text-align: center;
+                        color: black;
+                      }
+                    `
+                    }
+                    </style>                   
+                     </Card>
             </Col>
           </Row>
         </Container>
