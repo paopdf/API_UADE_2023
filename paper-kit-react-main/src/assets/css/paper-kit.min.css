@@ -5477,11 +5477,12 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 .card-plain img {
   border-radius: 12px;
 }
+
 .card-register {
-  background-color: #ff8f5e;
+  background-color: white;
   border-radius: 8px;
   color: #fff;
-  max-width: 350px;
+  max-width: 100%;
   margin: 20px 0 70px;
   min-height: 400px;
   padding: 30px;

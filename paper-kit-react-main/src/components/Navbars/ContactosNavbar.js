@@ -17,26 +17,22 @@
 
 */
 import React from "react";
-import { Link } from "react-router-dom";
 // nodejs library that concatenates strings
 import classnames from "classnames";
-import { useHistory } from 'react-router-dom';
 
 
 import { useNavigate  } from 'react-router-dom';
 // reactstrap components
 import {
   Collapse,
-  NavbarBrand,
   Navbar,
   NavItem,
-  NavLink,
   Nav,
   Container,
   Button
 } from "reactstrap";
 
-function ExamplesNavbar() {
+function GeneralNavbar() {
   
   const navigate = useNavigate();
   const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
@@ -85,13 +81,7 @@ function ExamplesNavbar() {
     >
       <Container>
         <div className="navbar-translate">
-            <NavbarBrand
-          >
-  <NavLink to="/profile-page" tag={Link}>
-          <h6>Home</h6>
-              </NavLink>
-          </NavbarBrand>
-      
+          
           <button
             aria-expanded={navbarCollapse}
             className={classnames("navbar-toggler navbar-toggler", {
@@ -126,4 +116,4 @@ function ExamplesNavbar() {
   );
 }
 
-export default ExamplesNavbar;
+export default GeneralNavbar;

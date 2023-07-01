@@ -21,7 +21,7 @@ import { Link } from "react-router-dom";
 // nodejs library that concatenates strings
 import classnames from "classnames";
 import  { useContext } from 'react';
-import { UserContext } from 'views/examples/UserContext.js';
+import { UserContext } from 'views/UserContext.js';
 // reactstrap components
 import {
   Collapse,
@@ -34,7 +34,7 @@ import {
   Button
 } from "reactstrap";
 
-function ExamplesNavbar() {
+function GeneralNavbar() {
   const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
   const [navbarCollapse, setNavbarCollapse] = React.useState(false);
 
@@ -129,4 +129,4 @@ console.log(userCount);
   );
 }
 
-export default ExamplesNavbar;
+export default GeneralNavbar;

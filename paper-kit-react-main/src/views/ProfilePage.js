@@ -21,8 +21,6 @@ import React from "react";
 // reactstrap components
 import {
   Container,
-  Row,
-  Col,
   NavLink
 } from "reactstrap";
 
@@ -30,40 +28,23 @@ import { UserProvider } from './UserContext';
 
 import { Link } from "react-router-dom";
 // core components
-import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
+import GeneralNavbar from "components/Navbars/GeneralNavbar.js";
 import ProfilePageHeader from "components/Headers/ProfilePageHeader.js";
 import DemoFooter from "components/Footers/DemoFooter.js";
 
 
-import { styled } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
-
-
-
-import { makeStyles } from "@material-ui/core/styles";
-import InputLabel from "@material-ui/core/InputLabel";
 // core components
 import GridItem from "components/Grid/GridItem.js";
 import GridContainer from "components/Grid/GridContainer.js";
-import CustomInput from "components/CustomInput/CustomInput.js";
 import Button from "components/CustomButtons/Button.js";
 import Card from "components/Card/Card.js";
-import CardHeader from "components/Card/CardHeader.js";
-import CardAvatar from "components/Card/CardAvatar.js";
 import CardBody from "components/Card/CardBody.js";
-import CardFooter from "components/Card/CardFooter.js";
 
 
 
 function ProfilePage() {
   const [activeTab, setActiveTab] = React.useState("1");
  
-  const toggle = (tab) => {
-    if (activeTab !== tab) {
-      setActiveTab(tab);
-    }
-  };
 
   document.documentElement.classList.remove("nav-open");
   React.useEffect(() => {
@@ -75,7 +56,7 @@ function ProfilePage() {
   return (
     <>
 <UserProvider>
-      <ExamplesNavbar />
+      <GeneralNavbar />
       </UserProvider>
       <ProfilePageHeader />
       <div className="home" lg = "6"   

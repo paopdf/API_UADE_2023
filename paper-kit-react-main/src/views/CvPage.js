@@ -21,34 +21,24 @@ import React from "react";
 
 // reactstrap components
 import {
-  Container,
   Row,
-  Col,
-  NavItem,
   NavLink
 } from "reactstrap";
 
 // core components
-import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
+import GeneralNavbar from "components/Navbars/GeneralNavbar.js";
 import ProfilePageHeader from "components/Headers/ProfilePageHeader.js";
 import DemoFooter from "components/Footers/DemoFooter.js";
 
-import { styled } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
-
 import { makeStyles } from "@material-ui/core/styles";
-import InputLabel from "@material-ui/core/InputLabel";
+
 // core components
 import GridItem from "components/Grid/GridItem.js";
 import GridContainer from "components/Grid/GridContainer.js";
-import CustomInput from "components/CustomInput/CustomInput.js";
-import Button from "components/CustomButtons/Button.js";
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardAvatar from "components/Card/CardAvatar.js";
 import CardBody from "components/Card/CardBody.js";
-import CardFooter from "components/Card/CardFooter.js";
 
 
 import avatar from "assets/img/pao.jpg";
@@ -80,8 +70,8 @@ const styles = {
     textDecoration: "none",
   },
   
-  cardInfoBlack: {
-    color: "#141414",
+  cardInfoWhite: {
+    color: "white",
     marginTop: "0px",
     minHeight: "auto",
     fontWeight: "500",
@@ -90,27 +80,21 @@ const styles = {
     textDecoration: "none",
     fontSize: 18,
     textAlign: "left"
-  },
+  }
 };
 
 const useStyles = makeStyles(styles);
 
 function CvPage() {
-  const [activeTab, setActiveTab] = React.useState("1");
   const classes = useStyles();
  
-  const toggle = (tab) => {
-    if (activeTab !== tab) {
-      setActiveTab(tab);
-    }
-  };
-
   return (
   
  <>
-      <ExamplesNavbar />
+      <GeneralNavbar />
       <ProfilePageHeader />
-        <div>
+        <div className="card-plain">
+        
         <GridContainer>
           <GridItem xs={12} sm={12} md={4}>
             <Card profile>
@@ -167,9 +151,9 @@ function CvPage() {
     
             <Card profile>
               <CardBody profile>
-                <h4 className={classes.cardInfoBlack}>Email: pao_pdpf@hotmail.com</h4>
-                <h4 className={classes.cardInfoBlack}>Telefono: 1135985869</h4>
-                <h4 className={classes.cardInfoBlack}>Palermo, CABA</h4>
+                <h4 className={classes.cardInfoWhite}>Email: pao_pdpf@hotmail.com</h4>
+                <h4 className={classes.cardInfoWhite}>Telefono: 1135985869</h4>
+                <h4 className={classes.cardInfoWhite}>Palermo, CABA</h4>
               <Row>
               <NavLink
                 href="https://twitter.com/paopdf"
@@ -177,7 +161,6 @@ function CvPage() {
                 title="Follow us on Twitter"
               >
                 <i className="fa fa-twitter" />
-                <p className="d-lg-none">Twitter</p>
               </NavLink>
               <NavLink
                 data-placement="bottom"
@@ -186,7 +169,6 @@ function CvPage() {
                 title="Like us on Facebook"
               >
                 <i className="fa fa-facebook-square" />
-                <p className="d-lg-none">Facebook</p>
               </NavLink>
               <NavLink
                 data-placement="bottom"
@@ -195,7 +177,6 @@ function CvPage() {
                 title="Follow us on Instagram"
               >
                 <i className="fa fa-instagram" />
-                <p className="d-lg-none">Instagram</p>
               </NavLink>
               <NavLink
                 data-placement="bottom"
@@ -204,7 +185,6 @@ function CvPage() {
                 title="Star on GitHub"
               >
                 <i className="fa fa-github" />
-                <p className="d-lg-none">GitHub</p>
               </NavLink>
               </Row>
               </CardBody>
@@ -314,7 +294,9 @@ function CvPage() {
           </GridItem>
         </GridContainer>
       </div>
+      <div>
       <DemoFooter />
+      </div>
     </>
   );
 }

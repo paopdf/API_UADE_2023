@@ -17,80 +17,81 @@
 
 */
 import React from "react";
-
-import postContact  from '../../api/contactar.api';
-import  { useState } from 'react';
-import TextField from '@mui/material/TextField';
-import Box from '@mui/material/Box';
 // reactstrap components
-import {
-  Button,
-  Container,
-  Row,
-  Col
-} from "reactstrap";
 
+import { Button, Container, Row, Col } from "reactstrap";
 
 // core components
-import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
+import GeneralNavbar from "components/Navbars/GeneralNavbar.js";
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+
 import ProfilePageHeader from "components/Headers/ProfilePageHeader.js";
 import DemoFooter from "components/Footers/DemoFooter.js";
 
+import register  from '../api/register.api';
+import  { useState } from 'react';
 
-const ContactPage = () => {
 
+function RegisterPage() {
 
   const [email, setEmail] = useState('');
-  const [telefono, settelefono] = useState('');
-  const [mensaje, setMensaje] = useState('');
+  const [lastname, setlastname] = useState('');
+  const [password, setpassword] = useState('');
   const [name, setName] = useState('');
   const [showModal, setShowModal] = useState(false);
+  const [selectedMessage, setSelectedMessage] = useState('');
+   
+  const openModal = (message) => {
+    setSelectedMessage(message);
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setSelectedMessage('');
+    setShowModal(false);
+  };
+
+
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
 
-  const handletelefonoChange = (e) => {
-    settelefono(e.target.value);
+  const handlelastnameChange = (e) => {
+    setlastname(e.target.value);
   };
 
   const handleNameChange = (e) => {
     setName(e.target.value);
   };
 
-  const handleMensajeChange = (e) => {
-    setMensaje(e.target.value);
+  const handlepasswordChange = (e) => {
+    setpassword(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    postContact(name,telefono,email,mensaje)
-      .then(() => {
-        setShowModal(true);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-      
-      setEmail('');
-      settelefono('');  
-      setMensaje('');
-      setName('');
-  };
-
-  const closeModal = () => {
-    setShowModal(false);
-  };
-
-
+    let response = await register(name,lastname,email,password)
+     if (response.message === 'Created!') {
+      openModal("Usuario Registrado con exito");
+    }
+    else {
+      openModal("Error, usuario ya existe");
+    }
+    setEmail('');
+    setlastname('');
+    setpassword('');
+    setName('');
+}
   return (
     <>
-      <ExamplesNavbar />
+      <GeneralNavbar />
       <ProfilePageHeader />
         <div className="section profile-content">
           <Container>
             <div className="title">
-              <h3>Rellenar Formulario</h3>
+              <h3>Mis Datos</h3>
             </div>
             <Box
                 component="form"
@@ -102,12 +103,14 @@ const ContactPage = () => {
               >
               <Row>
                 <Col className="ml-auto mr-auto" lg="6">
-                  <div className="social-line text-center">     
+                  <div className="social-line text-center">         
+                  <div>
+      
                     <form >
-                      <TextField
+                  <TextField
                         required
                         id="outlined-required"
-                        label="Nombre y Apellido"
+                        label="Nombre"
                         defaultValue=""
                         value={name} 
                         onChange={handleNameChange}
@@ -116,10 +119,10 @@ const ContactPage = () => {
                       <TextField
                         required
                         id="outlined-required"
-                        label="Telefono"
+                        label="Apellido"
                         defaultValue=""
-                        value={telefono} 
-                        onChange={handletelefonoChange}
+                        value={lastname} 
+                        onChange={handlelastnameChange}
                         type="text" 
                       />
                       <TextField
@@ -134,11 +137,11 @@ const ContactPage = () => {
                       <TextField
                         required
                         id="outlined-required"
-                        label="Mensaje"
+                        label="Password"
                         defaultValue=""
-                        value={mensaje} 
-                        onChange={handleMensajeChange}
-                        type="text"
+                        value={password} 
+                        onChange={handlepasswordChange}
+                        type="password"
                       />
                       <div className="col text-center" >
                         <Button onClick={handleSubmit} className="btn-round" color="danger">
@@ -146,23 +149,26 @@ const ContactPage = () => {
                         </Button>
                       </div>
                     </form>   
+              
+        </div>
                     {showModal && (
-                      <div className="modal">
-                        <div className="modal-content">
-                          <h3>Formulario Enviado</h3>
-                          <p>Gracias por contactarte!</p>
-                          <Button onClick={closeModal} className="btn-round" color="danger">Close</Button>
-                        </div>
-                      </div>
-                    )}
-                    <style>
-                    {`
-                      .modal {
-                        position: absolute;
+        <div className="modal">
+          <div className="modal-content">
+            <h3>{selectedMessage}</h3>
+            <h3> </h3>
+            <Button onClick={closeModal} className="btn-round" left= "1" color="danger">Close </Button>
+          </div>
+        </div>
+      )}
+
+      <style>
+        {`
+          .modal {
+                        position: fixed;
                         top: 20;
                         left: 20;
-                        width: 40;
-                        height: 400;
+                        width: 10;
+                        height: 2;
                         background-color: rgba(0, 0, 0, 0);
                         display: flex;
                         align-items: center;
@@ -174,19 +180,21 @@ const ContactPage = () => {
                         padding: 20px;
                         border-radius: 4px;
                         text-align: center;
+                        width: 40%;
+                        
                       }
-                    `
-                    }
-                    </style>                   
-                  </div>
+        `}
+      </style>
+                    </div>
                 </Col>
               </Row> 
             </Box>
           </Container>
         </div>
       <DemoFooter />
+      
     </>
   );
 }
 
-export default ContactPage;
+export default RegisterPage;

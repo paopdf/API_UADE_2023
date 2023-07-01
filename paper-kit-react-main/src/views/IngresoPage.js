@@ -16,15 +16,13 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import login from '../../api/login.api';
-import {useNavigate} from 'react-router-dom'
+import login from '../api/login.api';
 import React, { useState } from 'react';
-import { Link } from "react-router-dom";
 // reactstrap components
-import { Button, Card, Form, Input, Container, Row, Col,NavLink } from "reactstrap";
+import { Button, Card, Input, Container, Row, Col } from "reactstrap";
 
 // core components
-import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
+import GeneralNavbar from "components/Navbars/GeneralNavbar.js";
 
 function IngresoPage() {
   const [email, setEmail] = useState('');
@@ -65,12 +63,9 @@ function IngresoPage() {
   };
   return (
     <>
-      <ExamplesNavbar />
+      <GeneralNavbar />
       <div
         className="page-header"
-        style={{
-          backgroundImage: "url(" + require("assets/img/login-image.jpg") + ")"
-        }}
       >
         <div className="filter" />
         <Container>
@@ -125,7 +120,7 @@ function IngresoPage() {
         <div className="footer register-footer text-center">
           <h6>
             © {new Date().getFullYear()}, made with{" "}
-            <i className="fa fa-heart heart" /> by Creative Tim
+            <i className="fa fa-heart heart" /> by PP
           </h6>
         </div>
       </div>
