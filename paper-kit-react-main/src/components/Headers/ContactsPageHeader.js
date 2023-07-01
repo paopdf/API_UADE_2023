@@ -22,7 +22,7 @@ import React from "react";
 
 // core components
 
-function ProfilePageHeader() {
+function ContactsPageHeader() {
   let pageHeader = React.createRef();
 
   React.useEffect(() => {
@@ -52,4 +52,4 @@ function ProfilePageHeader() {
   );
 }
 
-export default ProfilePageHeader;
+export default ContactsPageHeader;

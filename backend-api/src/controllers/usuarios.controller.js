@@ -28,8 +28,25 @@ class UsuariosController {
       });
     }
   }
+  async getcountUsuarios(req, res) {
+    try {
+      // me guardo los usuarios del service de mongo
+      const cantidad = await UsuariosService.getCountUsers();
+      // si estamos ok devuelvo 200
+      return res.status(200).json({
+        cantidad: cantidad
+      });
+    } catch (err) {
+      console.error(err);
+      return res.status(500).json({
+        method: "getCountUsers",
+        message: err,
+      });
+    }
+  }
+      
 
-  async getUsuarioById(req, res) {
+      async getUsuarioById(req, res) {
     try {
       const id = req.params.id;
       let user = await UsuariosService.getUserById(id);

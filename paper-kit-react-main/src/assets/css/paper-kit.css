@@ -5489,8 +5489,9 @@ License - nucleoapp.com/license/
 
 .footer {
   background-attachment: fixed;
-  position: relative;
-  line-height: 20px;
+  position: fixed;
+      bottom: 0;
+      width: 100%;
 }
 .footer .footer-nav ul {
   padding-left: 0;

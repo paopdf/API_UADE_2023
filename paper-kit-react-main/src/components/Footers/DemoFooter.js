@@ -25,9 +25,10 @@ import { Row, Container } from "reactstrap";
 function DemoFooter() {
   return (
     <footer className="footer footer-black footer-white">
+    <div>
       <Container>
         <Row>
-          <nav className="footer-nav">
+          <nav className="footer-nav" position = "relative">
             <ul>
               <li>
                 <a
@@ -42,12 +43,13 @@ function DemoFooter() {
           <div className="credits ml-auto">
             <span className="copyright">
               © {new Date().getFullYear()}, made with{" "}
-              <i className="fa fa-heart heart" /> by Creative Tim
+              <i className="fa fa-heart heart" /> by PP
             </span>
           </div>
         </Row>
       </Container>
-    </footer>
+      </div>
+       </footer>
   );
 }
 

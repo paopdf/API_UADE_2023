@@ -3,6 +3,15 @@ const bcrypt = require('bcrypt');
 
 class UsuariosService{
 //Utiliza los metodos del ORM para comunicarse con la base de datos 
+    async getCountUsers() {
+      try {                // aca uso la coleccion que cree en models
+        const cantidad = await UsuariosModel.countDocuments();
+        return cantidad;
+      } catch (err) {
+        console.error(err);
+        throw new Error("Error in getUsers Service");
+      }
+    }
     async getUsers() {
         try {                // aca uso la coleccion que cree en models
           const users = await UsuariosModel.find(); // seria un select all de la coleccion
